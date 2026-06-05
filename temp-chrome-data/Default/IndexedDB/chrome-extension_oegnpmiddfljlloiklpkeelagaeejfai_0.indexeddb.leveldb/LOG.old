@@ -1,0 +1,15 @@
+2026/05/15-23:07:53.039 325074a Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/chrome-extension_oegnpmiddfljlloiklpkeelagaeejfai_0.indexeddb.leveldb/MANIFEST-000001
+2026/05/15-23:07:53.040 325074a Recovering log #67
+2026/05/15-23:07:53.040 325074a Reusing old log /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/chrome-extension_oegnpmiddfljlloiklpkeelagaeejfai_0.indexeddb.leveldb/000067.log 
+2026/05/15-23:07:55.054 325074a Level-0 table #72: started
+2026/05/15-23:07:55.055 325074a Level-0 table #72: 209 bytes OK
+2026/05/15-23:07:55.058 325074a Delete type=0 #67
+2026/05/15-23:07:55.061 325074a Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2026/05/15-23:07:55.061 325074a Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x00\x00\x00\x06' @ 78 : 1
+2026/05/15-23:07:55.061 325074a Compacting 1@1 + 1@2 files
+2026/05/15-23:07:55.062 325074a Generated table #73@1: 19 keys, 559 bytes
+2026/05/15-23:07:55.063 325074a Compacted 1@1 + 1@2 files => 559 bytes
+2026/05/15-23:07:55.064 325074a compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/05/15-23:07:55.064 325074a Delete type=2 #72
+2026/05/15-23:07:55.064 325074a Delete type=2 #69
+2026/05/15-23:07:55.067 325074a Manual compaction at level-1 from '\x00\x00\x00\x00\x06' @ 78 : 1 .. (end); will stop at (end)

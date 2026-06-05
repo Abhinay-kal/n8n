@@ -1,0 +1,15 @@
+2026/05/22-11:46:25.068 3250748 Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_neetcode.io_0.indexeddb.leveldb/MANIFEST-000001
+2026/05/22-11:46:25.069 3250748 Recovering log #46
+2026/05/22-11:46:25.070 3250748 Reusing old log /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_neetcode.io_0.indexeddb.leveldb/000046.log 
+2026/05/22-11:46:25.206 325075c Manual compaction at level-0 from '\x00\x19\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x1a\x00\x00\x00' @ 0 : 0; will stop at (end)
+2026/05/22-11:46:25.308 325075c Manual compaction at level-0 from '\x00\x1a\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x1b\x00\x00\x00' @ 0 : 0; will stop at (end)
+2026/05/22-11:46:25.700 325075a Level-0 table #52: started
+2026/05/22-11:46:25.702 325075a Level-0 table #52: 7120 bytes OK
+2026/05/22-11:46:25.704 325075a Delete type=0 #46
+2026/05/22-11:46:25.705 325075a Manual compaction at level-0 from '\x00\x1b\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x1c\x00\x00\x00' @ 0 : 0; will stop at (end)
+2026/05/22-11:47:43.748 325074a Compacting 1@1 + 1@2 files
+2026/05/22-11:47:43.753 325074a Generated table #53@1: 54 keys, 4209 bytes
+2026/05/22-11:47:43.754 325074a Compacted 1@1 + 1@2 files => 4209 bytes
+2026/05/22-11:47:43.756 325074a compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/05/22-11:47:43.756 325074a Delete type=2 #49
+2026/05/22-11:47:43.756 325074a Delete type=2 #52

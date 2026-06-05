@@ -1,0 +1,7 @@
+2026/02/26-09:35:21.209 d0ba0d Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_swayam-sso.swayam2.ac.in_0.indexeddb.leveldb/MANIFEST-000001
+2026/02/26-09:35:21.209 d0ba0d Recovering log #14
+2026/02/26-09:35:21.209 d0ba0d Reusing old log /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_swayam-sso.swayam2.ac.in_0.indexeddb.leveldb/000014.log 
+2026/02/26-09:35:21.218 d0ba0e Level-0 table #20: started
+2026/02/26-09:35:21.219 d0ba0e Level-0 table #20: 1072 bytes OK
+2026/02/26-09:35:21.220 d0ba0e Delete type=0 #14
+2026/02/26-09:35:21.221 d0b9f8 Manual compaction at level-0 from '\x00\x08\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x09\x00\x00\x00' @ 0 : 0; will stop at (end)

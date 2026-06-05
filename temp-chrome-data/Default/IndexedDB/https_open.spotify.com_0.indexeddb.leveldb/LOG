@@ -1,0 +1,21 @@
+2026/04/29-11:00:59.266 26cff19 Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_open.spotify.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/04/29-11:00:59.267 26cff19 Recovering log #4
+2026/04/29-11:00:59.270 26cff19 Reusing old log /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_open.spotify.com_0.indexeddb.leveldb/000004.log 
+2026/05/03-21:53:21.140 26cff19 Level-0 table #8: started
+2026/05/03-21:53:21.158 26cff19 Level-0 table #8: 1321799 bytes OK
+2026/05/03-21:53:21.161 26cff19 Delete type=0 #4
+2026/05/03-22:16:57.728 26cff16 Compacting 1@1 + 1@2 files
+2026/05/03-22:16:57.742 26cff16 Generated table #9@1: 1550 keys, 155259 bytes
+2026/05/03-22:16:57.742 26cff16 Compacted 1@1 + 1@2 files => 155259 bytes
+2026/05/03-22:16:57.744 26cff16 compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/05/03-22:16:57.744 26cff16 Delete type=2 #5
+2026/05/03-22:16:57.744 26cff16 Delete type=2 #8
+2026/05/03-23:01:11.708 26cff19 Level-0 table #11: started
+2026/05/03-23:01:11.724 26cff19 Level-0 table #11: 1195620 bytes OK
+2026/05/03-23:01:11.729 26cff19 Delete type=0 #7
+2026/05/03-23:06:54.604 26cff19 Compacting 1@1 + 1@2 files
+2026/05/03-23:06:54.614 26cff19 Generated table #12@1: 1709 keys, 153021 bytes
+2026/05/03-23:06:54.615 26cff19 Compacted 1@1 + 1@2 files => 153021 bytes
+2026/05/03-23:06:54.626 26cff19 compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/05/03-23:06:54.627 26cff19 Delete type=2 #11
+2026/05/03-23:06:54.627 26cff19 Delete type=2 #9

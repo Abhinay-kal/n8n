@@ -1,0 +1,6 @@
+2026/02/26-11:19:31.722 d0ba0d Creating DB /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_services.sheerid.com_0.indexeddb.leveldb since it was missing.
+2026/02/26-11:19:31.725 d0ba0d Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_services.sheerid.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/02/26-11:19:38.037 d0b9f8 Level-0 table #5: started
+2026/02/26-11:19:38.038 d0b9f8 Level-0 table #5: 1675 bytes OK
+2026/02/26-11:19:38.042 d0b9f8 Delete type=0 #3
+2026/02/26-11:19:38.042 d0b9f8 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

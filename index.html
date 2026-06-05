@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playwright Workflow Demo</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f8f9fa;
+        }
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            text-align: center;
+            max-width: 400px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 1.5rem;
+            font-weight: 600;
+            color: #28a745;
+            min-height: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Playwright Demo</h1>
+        <p>Click the button below to trigger a workflow action.</p>
+        <button id="trigger-btn">Run Action</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        const btn = document.getElementById('trigger-btn');
+        const result = document.getElementById('result');
+        
+        btn.addEventListener('click', () => {
+            result.textContent = 'Workflow Successfully Executed!';
+            btn.textContent = 'Done';
+            btn.disabled = true;
+            btn.style.backgroundColor = '#6c757d';
+        });
+    </script>
+</body>
+</html>

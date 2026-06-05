@@ -1,0 +1,33 @@
+2026/03/20-16:09:17.122 4cb494 Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_teams.microsoft.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/03/20-16:09:17.122 4cb494 Recovering log #19
+2026/03/20-16:09:17.130 4cb494 Reusing old log /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_teams.microsoft.com_0.indexeddb.leveldb/000019.log 
+2026/03/20-16:09:21.341 4cb494 Level-0 table #25: started
+2026/03/20-16:09:21.355 4cb494 Level-0 table #25: 1750616 bytes OK
+2026/03/20-16:09:21.391 4cb494 Delete type=0 #19
+2026/03/20-16:09:21.396 4cb494 Compacting 1@0 + 3@1 files
+2026/03/20-16:09:21.397 4cb494 Level-0 table #28: started
+2026/03/20-16:09:21.406 4cb494 Level-0 table #28: 2021187 bytes OK
+2026/03/20-16:09:21.407 4cb494 Delete type=0 #24
+2026/03/20-16:09:21.423 4cb494 Generated table #26@0: 40938 keys, 2191484 bytes
+2026/03/20-16:09:21.435 4cb494 Generated table #29@0: 12839 keys, 1691260 bytes
+2026/03/20-16:09:21.435 4cb494 Compacted 1@0 + 3@1 files => 3882744 bytes
+2026/03/20-16:09:21.435 4cb494 compacted to: files[ 1 2 1 0 0 0 0 ]
+2026/03/20-16:09:21.435 4cb494 Delete type=2 #21
+2026/03/20-16:09:21.435 4cb494 Delete type=2 #22
+2026/03/20-16:09:21.435 4cb494 Delete type=2 #25
+2026/03/20-16:09:21.435 4cb494 Delete type=2 #18
+2026/03/20-16:09:23.373 4cb49e Compacting 1@0 + 2@1 files
+2026/03/20-16:09:23.393 4cb49e Generated table #30@0: 34011 keys, 2165120 bytes
+2026/03/20-16:09:23.412 4cb49e Generated table #31@0: 16251 keys, 2182322 bytes
+2026/03/20-16:09:23.417 4cb49e Generated table #32@0: 4940 keys, 594146 bytes
+2026/03/20-16:09:23.417 4cb49e Compacted 1@0 + 2@1 files => 4941588 bytes
+2026/03/20-16:09:23.420 4cb49e compacted to: files[ 0 3 1 0 0 0 0 ]
+2026/03/20-16:09:23.420 4cb49e Delete type=2 #29
+2026/03/20-16:09:23.420 4cb49e Delete type=2 #28
+2026/03/20-16:09:23.420 4cb49e Delete type=2 #26
+2026/03/20-16:10:06.818 4cb491 Compacting 1@1 + 1@2 files
+2026/03/20-16:10:06.836 4cb491 Generated table #33@1: 3315 keys, 1915471 bytes
+2026/03/20-16:10:06.836 4cb491 Compacted 1@1 + 1@2 files => 1915471 bytes
+2026/03/20-16:10:06.839 4cb491 compacted to: files[ 0 2 1 0 0 0 0 ]
+2026/03/20-16:10:06.839 4cb491 Delete type=2 #5
+2026/03/20-16:10:06.839 4cb491 Delete type=2 #30

@@ -1,0 +1,2 @@
+Scope of thinking: Junior engineers focus on completing the task in front of them — making the code work. Senior engineers think about why the task exists, its impact on the broader system, and whether it's even the right thing to build.
+Handling uncertainty: Juniors need clear requirements and guidance to move forward. Seniors are comfortable with ambiguity — they can break down v

@@ -1,0 +1,6 @@
+2025/12/19-17:28:48.902 d12425 Creating DB /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_www.nature.com_0.indexeddb.leveldb since it was missing.
+2025/12/19-17:28:48.909 d12425 Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_www.nature.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/12/19-17:28:56.500 d12428 Level-0 table #5: started
+2025/12/19-17:28:56.502 d12428 Level-0 table #5: 7681 bytes OK
+2025/12/19-17:28:56.503 d12428 Delete type=0 #3
+2025/12/19-17:28:56.503 d12428 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

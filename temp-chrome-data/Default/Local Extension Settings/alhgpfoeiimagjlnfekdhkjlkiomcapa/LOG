@@ -1,0 +1,21 @@
+2026/06/02-15:27:40.503 d8cc77 Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/Local Extension Settings/alhgpfoeiimagjlnfekdhkjlkiomcapa/MANIFEST-000001
+2026/06/02-15:27:40.504 d8cc77 Recovering log #4
+2026/06/02-15:27:40.506 d8cc77 Reusing old log /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/Local Extension Settings/alhgpfoeiimagjlnfekdhkjlkiomcapa/000004.log 
+2026/06/03-10:22:17.042 d8cc79 Level-0 table #8: started
+2026/06/03-10:22:17.060 d8cc79 Level-0 table #8: 1747326 bytes OK
+2026/06/03-10:22:17.063 d8cc79 Delete type=0 #4
+2026/06/03-10:30:18.540 d8cc79 Compacting 1@1 + 1@2 files
+2026/06/03-10:30:18.545 d8cc79 Generated table #9@1: 8 keys, 19336 bytes
+2026/06/03-10:30:18.545 d8cc79 Compacted 1@1 + 1@2 files => 19336 bytes
+2026/06/03-10:30:18.546 d8cc79 compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/06/03-10:30:18.547 d8cc79 Delete type=2 #5
+2026/06/03-10:30:18.547 d8cc79 Delete type=2 #8
+2026/06/03-12:41:35.544 d8cc79 Level-0 table #11: started
+2026/06/03-12:41:35.556 d8cc79 Level-0 table #11: 1688112 bytes OK
+2026/06/03-12:41:35.566 d8cc79 Delete type=0 #7
+2026/06/03-14:30:17.066 d8cc79 Compacting 1@1 + 1@2 files
+2026/06/03-14:30:17.078 d8cc79 Generated table #12@1: 8 keys, 23277 bytes
+2026/06/03-14:30:17.078 d8cc79 Compacted 1@1 + 1@2 files => 23277 bytes
+2026/06/03-14:30:17.084 d8cc79 compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/06/03-14:30:17.084 d8cc79 Delete type=2 #11
+2026/06/03-14:30:17.084 d8cc79 Delete type=2 #9

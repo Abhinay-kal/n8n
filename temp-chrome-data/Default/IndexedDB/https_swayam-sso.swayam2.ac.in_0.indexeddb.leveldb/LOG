@@ -1,0 +1,13 @@
+2026/02/26-11:47:48.920 d0b9f8 Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_swayam-sso.swayam2.ac.in_0.indexeddb.leveldb/MANIFEST-000001
+2026/02/26-11:47:48.920 d0b9f8 Recovering log #19
+2026/02/26-11:47:48.921 d0b9f8 Reusing old log /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_swayam-sso.swayam2.ac.in_0.indexeddb.leveldb/000019.log 
+2026/02/26-11:47:48.934 d0ba0e Level-0 table #23: started
+2026/02/26-11:47:48.934 d0ba0e Level-0 table #23: 3412 bytes OK
+2026/02/26-11:47:48.935 d0ba0e Delete type=0 #19
+2026/02/26-11:47:48.936 d0b9f8 Manual compaction at level-0 from '\x00\x09\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x0a\x00\x00\x00' @ 0 : 0; will stop at '\x00\x09\x00\x00\x05' @ 467 : 1
+2026/02/26-11:47:48.936 d0b9f8 Compacting 1@0 + 1@1 files
+2026/02/26-11:47:48.937 d0b9f8 Generated table #24@0: 28 keys, 2648 bytes
+2026/02/26-11:47:48.937 d0b9f8 Compacted 1@0 + 1@1 files => 2648 bytes
+2026/02/26-11:47:48.938 d0b9f8 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/02/26-11:47:48.938 d0b9f8 Delete type=2 #23
+2026/02/26-11:47:48.939 d0b9f8 Manual compaction at level-0 from '\x00\x09\x00\x00\x05' @ 467 : 1 .. '\x00\x0a\x00\x00\x00' @ 0 : 0; will stop at (end)

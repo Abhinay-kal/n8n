@@ -1,0 +1,31 @@
+2026/06/02-15:28:03.265 d8cc79 Creating DB /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_cloud.digitalocean.com_0.indexeddb.leveldb since it was missing.
+2026/06/02-15:28:03.269 d8cc79 Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_cloud.digitalocean.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/06/02-15:28:05.359 d8cc86 Level-0 table #5: started
+2026/06/02-15:28:05.365 d8cc86 Level-0 table #5: 5372 bytes OK
+2026/06/02-15:28:05.367 d8cc86 Delete type=0 #3
+2026/06/02-15:28:05.367 d8cc77 Manual compaction at level-0 from '\x00\x03\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x04\x00\x00\x00' @ 0 : 0; will stop at (end)
+2026/06/02-15:28:09.944 d8cc86 Level-0 table #7: started
+2026/06/02-15:28:09.962 d8cc86 Level-0 table #7: 5091 bytes OK
+2026/06/02-15:28:09.965 d8cc86 Delete type=0 #4
+2026/06/02-15:28:09.965 d8cc86 Manual compaction at level-0 from '\x00\x05\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x06\x00\x00\x00' @ 0 : 0; will stop at (end)
+2026/06/02-15:28:11.143 d8cc85 Level-0 table #9: started
+2026/06/02-15:28:11.149 d8cc85 Level-0 table #9: 544 bytes OK
+2026/06/02-15:28:11.151 d8cc85 Delete type=0 #6
+2026/06/02-15:28:11.151 d8cc86 Manual compaction at level-0 from '\x00\x09\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x0a\x00\x00\x00' @ 0 : 0; will stop at '\x00\x09\x00\x00\x05' @ 697 : 1
+2026/06/02-15:28:11.151 d8cc86 Compacting 1@0 + 1@1 files
+2026/06/02-15:28:11.152 d8cc86 Generated table #10@0: 161 keys, 2512 bytes
+2026/06/02-15:28:11.152 d8cc86 Compacted 1@0 + 1@1 files => 2512 bytes
+2026/06/02-15:28:11.153 d8cc86 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/06/02-15:28:11.154 d8cc86 Delete type=2 #9
+2026/06/02-15:28:11.154 d8cc77 Manual compaction at level-0 from '\x00\x09\x00\x00\x05' @ 697 : 1 .. '\x00\x0a\x00\x00\x00' @ 0 : 0; will stop at (end)
+2026/06/02-15:28:11.154 d8cc77 Level-0 table #12: started
+2026/06/02-15:28:11.156 d8cc77 Level-0 table #12: 535 bytes OK
+2026/06/02-15:28:11.157 d8cc77 Delete type=2 #7
+2026/06/02-15:28:11.157 d8cc77 Delete type=0 #8
+2026/06/02-15:28:11.158 d8cc88 Manual compaction at level-0 from '\x00\x0a\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x0b\x00\x00\x00' @ 0 : 0; will stop at '\x00\x0a\x00\x00\x05' @ 714 : 1
+2026/06/02-15:28:11.158 d8cc88 Compacting 1@0 + 1@1 files
+2026/06/02-15:28:11.159 d8cc88 Generated table #13@0: 165 keys, 2544 bytes
+2026/06/02-15:28:11.159 d8cc88 Compacted 1@0 + 1@1 files => 2544 bytes
+2026/06/02-15:28:11.160 d8cc88 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/06/02-15:28:11.160 d8cc88 Delete type=2 #12
+2026/06/02-15:28:11.160 d8cc77 Manual compaction at level-0 from '\x00\x0a\x00\x00\x05' @ 714 : 1 .. '\x00\x0b\x00\x00\x00' @ 0 : 0; will stop at (end)

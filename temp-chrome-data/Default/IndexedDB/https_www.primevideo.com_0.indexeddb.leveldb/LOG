@@ -1,0 +1,15 @@
+2026/03/30-19:21:47.132 e0e46b Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_www.primevideo.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/03/30-19:21:47.132 e0e46b Recovering log #4
+2026/03/30-19:21:47.132 e0e46b Reusing old log /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_www.primevideo.com_0.indexeddb.leveldb/000004.log 
+2026/03/30-19:22:25.040 e0e46b Level-0 table #8: started
+2026/03/30-19:22:25.043 e0e46b Level-0 table #8: 69699 bytes OK
+2026/03/30-19:22:25.045 e0e46b Delete type=0 #4
+2026/03/30-19:22:25.046 e0e46b Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2026/03/30-19:22:25.046 e0e46b Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x03\x01\x02\x01\x13\x00g\x00e\x00t\x00w\x00e\x00b\x00l\x00a\x00b\x00s\x00_\x00m\x00e\x00t\x00a\x00d\x00a\x00t\x00a' @ 1145 : 1
+2026/03/30-19:22:25.046 e0e46b Compacting 1@1 + 1@2 files
+2026/03/30-19:22:25.049 e0e46b Generated table #9@1: 72 keys, 21627 bytes
+2026/03/30-19:22:25.049 e0e46b Compacted 1@1 + 1@2 files => 21627 bytes
+2026/03/30-19:22:25.050 e0e46b compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/03/30-19:22:25.051 e0e46b Delete type=2 #5
+2026/03/30-19:22:25.051 e0e46b Delete type=2 #8
+2026/03/30-19:22:25.052 e0e46b Manual compaction at level-1 from '\x00\x03\x01\x02\x01\x13\x00g\x00e\x00t\x00w\x00e\x00b\x00l\x00a\x00b\x00s\x00_\x00m\x00e\x00t\x00a\x00d\x00a\x00t\x00a' @ 1145 : 1 .. (end); will stop at (end)

@@ -1,0 +1,15 @@
+2026/05/02-21:04:17.705 26cff19 Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_www.scribd.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/05/02-21:04:17.705 26cff19 Recovering log #4
+2026/05/02-21:04:17.706 26cff19 Reusing old log /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_www.scribd.com_0.indexeddb.leveldb/000004.log 
+2026/05/02-21:04:28.107 26cff19 Level-0 table #8: started
+2026/05/02-21:04:28.111 26cff19 Level-0 table #8: 209 bytes OK
+2026/05/02-21:04:28.113 26cff19 Delete type=0 #4
+2026/05/02-21:04:28.114 26cff19 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2026/05/02-21:04:28.114 26cff19 Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x00\x00\x00\x06' @ 52 : 1
+2026/05/02-21:04:28.114 26cff19 Compacting 1@1 + 1@2 files
+2026/05/02-21:04:28.115 26cff19 Generated table #9@1: 22 keys, 530 bytes
+2026/05/02-21:04:28.115 26cff19 Compacted 1@1 + 1@2 files => 530 bytes
+2026/05/02-21:04:28.117 26cff19 compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/05/02-21:04:28.117 26cff19 Delete type=2 #5
+2026/05/02-21:04:28.117 26cff19 Delete type=2 #8
+2026/05/02-21:04:28.118 26cff19 Manual compaction at level-1 from '\x00\x00\x00\x00\x06' @ 52 : 1 .. (end); will stop at (end)

@@ -1,0 +1,628 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Apollo Dialer</title><style>@font-face {
+  font-family: 'apollo-icons';
+  src: url('/fonts/o8h6a_rNdM_apollo-icons8w1a2.woff2') format('woff2'),
+       url('/fonts/o8h6a_rNdM_apollo-icons8w1a2.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.apollo-icon {
+  font-family: 'apollo-icons' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Icon glyphs — codes sourced from packages/shared/src/icons/apollo-icons/apollo-icons.css */
+.apollo-icon-dialpad::before { content: '\f199'; }
+.apollo-icon-mic-on::before { content: '\f230'; }
+.apollo-icon-mic-slash::before { content: '\f231'; }
+.apollo-icon-voicemail::before { content: '\f2f1'; }
+.apollo-icon-flag::before { content: '\f1cb'; }
+.apollo-icon-phone-decline::before { content: '\f259'; }</style><style>* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: #fff;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #1a1a1a;
+}
+
+.header {
+  padding: 16px 20px;
+}
+
+.contact-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.phone-number {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  position: relative;
+}
+
+.action-buttons-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.action-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease;
+  flex-shrink: 0;
+}
+
+.action-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.action-btn.active {
+  background-color: #e0e0e0;
+}
+
+.action-btn .apollo-icon {
+  font-size: 22px;
+  color: #555;
+  pointer-events: none;
+}
+
+.action-btn:hover .apollo-icon {
+  color: #1a1a1a;
+}
+
+.action-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.action-btn:disabled:hover {
+  background-color: transparent;
+}
+
+.action-btn:disabled:hover .apollo-icon {
+  color: #555;
+}
+
+.call-status {
+  margin-top: auto;
+  padding-bottom: 16px;
+}
+
+.timer {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+.status-text {
+  font-size: 13px;
+  color: #888;
+}
+
+.end-call-section {
+  padding: 16px 20px;
+  border-top: 1px solid #e8e8e8;
+}
+
+.end-call-btn {
+  width: 100%;
+  padding: 14px 20px;
+  background: #ebf212;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a1a;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: background-color 0.15s ease;
+}
+
+.end-call-btn:hover {
+  background: #d8e003;
+}
+
+.end-call-btn .apollo-icon {
+  font-size: 20px;
+  color: currentColor;
+}
+
+/* Dialpad Popup - Hidden by default, absolutely positioned */
+.dialpad-popup {
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+  padding: 12px;
+  z-index: 100;
+}
+
+.dialpad-popup.show {
+  display: block;
+}
+
+.dialpad-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dialpad-row {
+  display: flex;
+  justify-content: center;
+}
+
+.dialpad-key {
+  width: 50px;
+  height: 50px;
+  margin: 2px;
+  border: none;
+  background: transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.1s ease;
+  user-select: none;
+}
+
+.dialpad-key:hover {
+  background: #447aaf;
+}
+
+.dialpad-key:hover .digit {
+  color: #fff;
+}
+
+.dialpad-key:hover .letters {
+  color: #6697c9;
+}
+
+.dialpad-key:active {
+  background: #1d3d58;
+}
+
+.dialpad-key:active .digit {
+  color: #fff;
+}
+
+.dialpad-key:active .letters {
+  color: #6697c9;
+}
+
+.dialpad-key .digit {
+  font-size: 20px;
+  font-weight: 600;
+  color: #447aaf;
+  line-height: 1;
+}
+
+.dialpad-key .letters {
+  font-size: 9px;
+  color: #77736e;
+  letter-spacing: 1px;
+  margin-top: 2px;
+  min-height: 11px;
+}
+
+/* Voicemail popup - bottom sheet */
+.voicemail-popup {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.15);
+  padding: 16px;
+  z-index: 100;
+}
+
+.voicemail-popup.show {
+  display: block;
+}
+
+.voicemail-popup-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+.voicemail-loading-text {
+  font-size: 14px;
+  color: #888;
+  text-align: center;
+  padding: 12px 0;
+}
+
+.voicemail-empty-text {
+  font-size: 14px;
+  color: #585450;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.voicemail-setup-btn {
+  width: 100%;
+  padding: 10px;
+  background: #ebf212;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.voicemail-setup-btn:hover {
+  background: #d8e003;
+}
+
+.voicemail-label {
+  font-size: 13px;
+  color: #585450;
+  margin-bottom: 6px;
+}
+
+.voicemail-select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #d8d6d4;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #1a1a1a;
+  background: #fff;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.voicemail-select:focus {
+  outline: none;
+  border-color: #447aaf;
+}
+
+.voicemail-drop-btn {
+  width: 100%;
+  padding: 10px;
+  background: #ebf212;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.voicemail-drop-btn:hover {
+  background: #d8e003;
+}
+
+/* Report Issue Popup - Bottom sheet that grows upward */
+.report-popup {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.15);
+  padding: 16px;
+  z-index: 100;
+  max-height: 85vh;
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.report-popup::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.report-popup.show {
+  display: block;
+}
+
+.report-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+}
+
+.report-option {
+  border: 1px solid #ebebea;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  overflow: hidden;
+  transition: border-color 0.15s ease;
+}
+
+.report-option:hover {
+  border-color: #d8d6d4;
+}
+
+.report-option.selected {
+  border-color: #447aaf;
+}
+
+.report-option-header {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.report-checkbox {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #b0adab;
+  border-radius: 4px;
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+}
+
+.report-option.selected .report-checkbox {
+  background: #447aaf;
+  border-color: #447aaf;
+}
+
+.report-checkbox::after {
+  content: '';
+  display: none;
+  width: 5px;
+  height: 9px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  margin-bottom: 2px;
+}
+
+.report-option.selected .report-checkbox::after {
+  display: block;
+}
+
+.report-option-label {
+  font-size: 14px;
+  color: #1a1a1a;
+  flex: 1;
+}
+
+.report-option-toggle {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #77736e;
+  transition: transform 0.15s ease;
+}
+
+.report-option.expanded .report-option-toggle {
+  transform: rotate(180deg);
+}
+
+.report-option-content {
+  display: none;
+  padding: 0 12px 12px 12px;
+}
+
+.report-option.expanded .report-option-content {
+  display: block;
+}
+
+.report-textarea-label {
+  font-size: 13px;
+  color: #585450;
+  margin-bottom: 8px;
+}
+
+.report-textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 10px 12px;
+  border: 1px solid #ebebea;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  resize: vertical;
+  transition: border-color 0.15s ease;
+}
+
+.report-textarea:focus {
+  outline: none;
+  border-color: #447aaf;
+}
+
+.report-textarea::placeholder {
+  color: #b0adab;
+}
+
+.report-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #ebebea;
+}
+
+.report-cancel-btn {
+  padding: 10px 20px;
+  background: transparent;
+  border: 1px solid #d8d6d4;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #585450;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.report-cancel-btn:hover {
+  background: #f8f7f7;
+  border-color: #b0adab;
+}
+
+.report-submit-btn {
+  padding: 10px 20px;
+  background: #447aaf;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.report-submit-btn:hover {
+  background: #2b5782;
+}
+
+.report-submit-btn:disabled {
+  background: #b0adab;
+  cursor: not-allowed;
+}
+
+/* Toast notification */
+.toast-container {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  right: 16px;
+  z-index: 200;
+  pointer-events: none;
+  display: none;
+}
+
+.toast-container.show {
+  display: block;
+}
+
+.toast {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+  padding: 16px;
+  pointer-events: auto;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.toast-container.show .toast {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.toast-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+  color: #4b814f;
+}
+
+.toast-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  flex: 1;
+}
+
+.toast-close {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #77736e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: color 0.15s ease;
+}
+
+.toast-close:hover {
+  color: #1a1a1a;
+}
+
+.toast-message {
+  font-size: 14px;
+  color: #585450;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.toast-action {
+  font-size: 14px;
+  font-weight: 500;
+  color: #447aaf;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.15s ease;
+}
+
+.toast-action:hover {
+  color: #2b5782;
+}</style></head><body><div class="toast-container" id="toastContainer"><div class="toast" id="toast"><div class="toast-header"><svg class="toast-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"></path><rect x="3" y="3" width="18" height="18" rx="2"></rect></svg><div class="toast-title" id="toastTitle">Report submitted</div><button class="toast-close" id="toastClose" type="button"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"></path></svg></button></div><div class="toast-message" id="toastMessage">Thank you for providing feedback. Our team will review your feedback as soon as possible and reach out if we have any additional questions.</div><button class="toast-action" id="toastAction" type="button">Got it</button></div></div><div class="header"><div class="contact-name" id="contactName">Call with Unknown</div><div class="phone-number" id="phoneNumber">--</div></div><div class="main-content"><div class="action-buttons-row"><button class="action-btn" id="dialpadBtn" type="button" title="Dialpad"><i class="apollo-icon apollo-icon-dialpad"></i></button><button class="action-btn" id="muteBtn" type="button" title="Mute"><i class="apollo-icon apollo-icon-mic-on" id="muteIcon"></i></button><button class="action-btn" id="voicemailBtn" type="button" disabled="disabled" title="Voicemail drop is only enabled when the customer picks up the call"><i class="apollo-icon apollo-icon-voicemail"></i></button><button class="action-btn" id="reportBtn" type="button" title="Report Issue"><i class="apollo-icon apollo-icon-flag"></i></button></div><div class="dialpad-popup" id="dialpadPopup"><div class="dialpad-grid"><div class="dialpad-row"><button class="dialpad-key" type="button" data-digit="1"><span class="digit">1</span><span class="letters">&nbsp;</span></button><button class="dialpad-key" type="button" data-digit="2"><span class="digit">2</span><span class="letters">ABC</span></button><button class="dialpad-key" type="button" data-digit="3"><span class="digit">3</span><span class="letters">DEF</span></button></div><div class="dialpad-row"><button class="dialpad-key" type="button" data-digit="4"><span class="digit">4</span><span class="letters">GHI</span></button><button class="dialpad-key" type="button" data-digit="5"><span class="digit">5</span><span class="letters">JKL</span></button><button class="dialpad-key" type="button" data-digit="6"><span class="digit">6</span><span class="letters">MNO</span></button></div><div class="dialpad-row"><button class="dialpad-key" type="button" data-digit="7"><span class="digit">7</span><span class="letters">PQRS</span></button><button class="dialpad-key" type="button" data-digit="8"><span class="digit">8</span><span class="letters">TUV</span></button><button class="dialpad-key" type="button" data-digit="9"><span class="digit">9</span><span class="letters">WXYZ</span></button></div><div class="dialpad-row"><button class="dialpad-key" type="button" data-digit="*"><span class="digit">*</span><span class="letters">&nbsp;</span></button><button class="dialpad-key" type="button" data-digit="0"><span class="digit">0</span><span class="letters">+</span></button><button class="dialpad-key" type="button" data-digit="#"><span class="digit">#</span><span class="letters">&nbsp;</span></button></div></div></div><div class="voicemail-popup" id="voicemailPopup"><div class="voicemail-popup-title">Voicemail Drop</div><div id="voicemailLoadingView"><div class="voicemail-loading-text">Loading voicemails...</div></div><div id="voicemailEmptyView" style="display: none"><div class="voicemail-empty-text">You don't have any voicemails set up yet. Set one up to use voicemail drop.</div><button class="voicemail-setup-btn" id="voicemailSetupBtn" type="button">Set up Voicemail</button></div><div id="voicemailRecordingsView" style="display: none"><div class="voicemail-label">Select voicemail to drop</div><select class="voicemail-select" id="voicemailSelect"></select><button class="voicemail-drop-btn" id="voicemailDropBtn" type="button">Leave voicemail and hang up</button></div></div><div class="report-popup" id="reportPopup"><div class="report-title">Report Issue</div><div class="report-option" data-reason="dialerFroze"><div class="report-option-header"><div class="report-checkbox"></div><div class="report-option-label">My dialer/browser froze</div><div class="report-option-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><path d="M2.5 4.5L6 8L9.5 4.5"></path></svg></div></div><div class="report-option-content"><div class="report-textarea-label">Anything else we should know?</div><textarea class="report-textarea" placeholder="Add more details about the problem you encountered"></textarea></div></div><div class="report-option" data-reason="dialerNumberDidntWork"><div class="report-option-header"><div class="report-checkbox"></div><div class="report-option-label">My dialer number doesn't work</div><div class="report-option-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><path d="M2.5 4.5L6 8L9.5 4.5"></path></svg></div></div><div class="report-option-content"><div class="report-textarea-label">Anything else we should know?</div><textarea class="report-textarea" placeholder="Add more details about the problem you encountered"></textarea></div></div><div class="report-option" data-reason="callDisconnected"><div class="report-option-header"><div class="report-checkbox"></div><div class="report-option-label">My call disconnected unexpectedly</div><div class="report-option-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><path d="M2.5 4.5L6 8L9.5 4.5"></path></svg></div></div><div class="report-option-content"><div class="report-textarea-label">Anything else we should know?</div><textarea class="report-textarea" placeholder="Add more details about the problem you encountered"></textarea></div></div><div class="report-option" data-reason="other"><div class="report-option-header"><div class="report-checkbox"></div><div class="report-option-label">Other</div><div class="report-option-toggle"><svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><path d="M2.5 4.5L6 8L9.5 4.5"></path></svg></div></div><div class="report-option-content"><div class="report-textarea-label">Anything else we should know?</div><textarea class="report-textarea" placeholder="Add more details about the problem you encountered"></textarea></div></div><div class="report-actions"><button class="report-cancel-btn" id="reportCancelBtn" type="button">Cancel</button><button class="report-submit-btn" id="reportSubmitBtn" type="button" disabled="disabled">Send Report</button></div></div><div class="call-status"><div class="timer" id="timer">00:00</div><div class="status-text" id="statusText">Connecting...</div></div></div><div class="end-call-section"><button class="end-call-btn" id="endCallBtn" type="button"><i class="apollo-icon apollo-icon-phone-decline"></i><span>End this call</span></button></div><script src="/js/voiceWindow.bundle.js"></script></body></html>

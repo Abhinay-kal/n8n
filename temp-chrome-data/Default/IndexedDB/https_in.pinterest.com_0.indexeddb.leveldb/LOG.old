@@ -1,0 +1,24 @@
+2026/04/27-19:43:36.383 26cff19 Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_in.pinterest.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/04/27-19:43:36.383 26cff19 Recovering log #4
+2026/04/27-19:43:36.384 26cff19 Reusing old log /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_in.pinterest.com_0.indexeddb.leveldb/000004.log 
+2026/04/30-10:53:23.867 26cff19 Level-0 table #8: started
+2026/04/30-10:53:23.889 26cff19 Level-0 table #8: 1844809 bytes OK
+2026/04/30-10:53:23.892 26cff19 Delete type=0 #4
+2026/04/30-10:53:28.316 26cff16 Compacting 1@1 + 1@2 files
+2026/04/30-10:53:28.327 26cff16 Generated table #9@1: 58 keys, 10792 bytes
+2026/04/30-10:53:28.327 26cff16 Compacted 1@1 + 1@2 files => 10792 bytes
+2026/04/30-10:53:28.329 26cff16 compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/04/30-20:17:14.434 26cff16 Level-0 table #11: started
+2026/04/30-20:17:14.452 26cff16 Level-0 table #11: 1418326 bytes OK
+2026/04/30-20:17:14.462 26cff16 Delete type=0 #7
+2026/04/30-20:17:14.462 26cff16 Delete type=2 #5
+2026/04/30-20:17:14.462 26cff16 Delete type=2 #8
+2026/04/30-20:17:14.466 26cff16 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2026/04/30-20:17:14.466 26cff16 Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x01\x01\x02\x01$\x00f\x00e\x00c\x002\x00e\x003\x009\x002\x00-\x008\x004\x009\x002\x00-\x004\x00e\x007\x00a\x00-\x00b\x005\x00d\x005\x00-\x005\x00e\x00a\x009\x00b\x007\x009\x00d\x008\x00f\x00e\x006' @ 33738 : 1
+2026/04/30-20:17:14.466 26cff16 Compacting 1@1 + 1@2 files
+2026/04/30-20:17:14.471 26cff16 Generated table #12@1: 56 keys, 7938 bytes
+2026/04/30-20:17:14.471 26cff16 Compacted 1@1 + 1@2 files => 7938 bytes
+2026/04/30-20:17:14.473 26cff16 compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/04/30-20:17:14.473 26cff16 Delete type=2 #11
+2026/04/30-20:17:14.473 26cff16 Delete type=2 #9
+2026/04/30-20:17:14.476 26cff16 Manual compaction at level-1 from '\x00\x01\x01\x02\x01$\x00f\x00e\x00c\x002\x00e\x003\x009\x002\x00-\x008\x004\x009\x002\x00-\x004\x00e\x007\x00a\x00-\x00b\x005\x00d\x005\x00-\x005\x00e\x00a\x009\x00b\x007\x009\x00d\x008\x00f\x00e\x006' @ 33738 : 1 .. (end); will stop at (end)

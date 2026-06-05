@@ -1,0 +1,18 @@
+2026/05/29-10:03:04.508 5ff601 Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_mail.google.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/05/29-10:03:04.508 5ff601 Recovering log #116
+2026/05/29-10:03:04.509 5ff601 Reusing old log /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_mail.google.com_0.indexeddb.leveldb/000116.log 
+2026/05/29-10:03:06.286 5ff5fe Compacting 1@0 + 1@1 files
+2026/05/29-10:03:06.309 5ff5fe Generated table #119@0: 1105 keys, 2017094 bytes
+2026/05/29-10:03:06.309 5ff5fe Compacted 1@0 + 1@1 files => 2017094 bytes
+2026/05/29-10:03:06.315 5ff5fe compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/05/29-10:03:06.315 5ff5fe Delete type=2 #117
+2026/05/29-10:03:06.315 5ff5fe Delete type=2 #115
+2026/05/29-10:03:22.316 5ff601 Compacting 1@1 + 1@2 files
+2026/05/29-10:03:22.337 5ff601 Generated table #120@1: 81 keys, 230430 bytes
+2026/05/29-10:03:22.337 5ff601 Compacted 1@1 + 1@2 files => 230430 bytes
+2026/05/29-10:03:22.343 5ff601 compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/05/29-10:03:22.343 5ff601 Delete type=2 #113
+2026/05/29-10:03:22.344 5ff601 Delete type=2 #119
+2026/05/29-10:03:43.837 5ff601 Level-0 table #122: started
+2026/05/29-10:03:43.856 5ff601 Level-0 table #122: 3156759 bytes OK
+2026/05/29-10:03:43.862 5ff601 Delete type=0 #116

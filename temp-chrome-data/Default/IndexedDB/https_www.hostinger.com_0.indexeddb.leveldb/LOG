@@ -1,0 +1,15 @@
+2026/05/26-10:43:45.652 132691 Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_www.hostinger.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/05/26-10:43:45.652 132691 Recovering log #4
+2026/05/26-10:43:45.653 132691 Reusing old log /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_www.hostinger.com_0.indexeddb.leveldb/000004.log 
+2026/05/26-10:43:50.589 132691 Level-0 table #8: started
+2026/05/26-10:43:50.600 132691 Level-0 table #8: 594 bytes OK
+2026/05/26-10:43:50.602 132691 Delete type=0 #4
+2026/05/26-10:43:50.603 132691 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2026/05/26-10:43:50.603 132691 Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x01\x05\x02\x01\x14\x00l\x00a\x00s\x00t\x00_\x00f\x00l\x00u\x00s\x00h\x00_\x00t\x00i\x00m\x00e\x00s\x00t\x00a\x00m\x00p' @ 210 : 1
+2026/05/26-10:43:50.603 132691 Compacting 1@1 + 1@2 files
+2026/05/26-10:43:50.604 132691 Generated table #9@1: 61 keys, 1156 bytes
+2026/05/26-10:43:50.604 132691 Compacted 1@1 + 1@2 files => 1156 bytes
+2026/05/26-10:43:50.605 132691 compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/05/26-10:43:50.605 132691 Delete type=2 #5
+2026/05/26-10:43:50.605 132691 Delete type=2 #8
+2026/05/26-10:43:50.606 132691 Manual compaction at level-1 from '\x00\x01\x05\x02\x01\x14\x00l\x00a\x00s\x00t\x00_\x00f\x00l\x00u\x00s\x00h\x00_\x00t\x00i\x00m\x00e\x00s\x00t\x00a\x00m\x00p' @ 210 : 1 .. (end); will stop at (end)

@@ -1,0 +1,6 @@
+2026/05/29-10:02:10.971 5ff601 Creating DB /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_www.instagram.com_0.indexeddb.leveldb since it was missing.
+2026/05/29-10:02:10.987 5ff601 Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_www.instagram.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/05/29-11:12:58.920 5ff601 Level-0 table #5: started
+2026/05/29-11:12:58.922 5ff601 Level-0 table #5: 2403 bytes OK
+2026/05/29-11:12:58.923 5ff601 Delete type=0 #3
+2026/05/29-11:12:58.924 5ff601 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

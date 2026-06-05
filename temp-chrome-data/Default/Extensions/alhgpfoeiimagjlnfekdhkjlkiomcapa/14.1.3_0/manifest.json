@@ -1,0 +1,42 @@
+{
+   "action": {
+      "default_title": "Apollo"
+   },
+   "background": {
+      "service_worker": "1js1x_rNdM_serviceWorker01tov.js",
+      "type": "module"
+   },
+   "content_scripts": [ {
+      "js": [ "js/9hw8h_rNdM_injectLINetwork.bundle9nhpi.js" ],
+      "matches": [ "*://*.linkedin.com/*" ],
+      "run_at": "document_start"
+   }, {
+      "js": [ "js/o090s_rNdM_injectHSNetwork.bundle57tqp.js" ],
+      "matches": [ "*://*.hubspot.com/*" ],
+      "run_at": "document_start"
+   } ],
+   "content_security_policy": {
+      "extension_pages": "script-src 'self' http://localhost:8097 http://localhost:8098; object-src 'self'; connect-src https://o101058.ingest.us.sentry.io https://app.apollo.io https://www.apollo.io https://extension.apollo.io https://api.amplitude.com https://track.customer.io https://insights-collector.newrelic.com http://whatis.customeriomail.com/ wss://voice-js.roaming.twilio.com/signal https://sdk.twilio.com https://api2.amplitude.com/2/httpapi ws://localhost:8097 ws://localhost:8098 https://eventgw.us1.twilio.com/v4/EndpointEvent wss://ws-mt1.pusher.com https://ws-mt1.pusher.com https://sockjs-mt1.pusher.com wss://sockjs-mt1.pusher.com https://eventgw.us1.twilio.com/v4/EndpointEvents https://eventgw.us1.twilio.com/v4/EndpointMetrics https://assets.apollo.io https://www.apollo.io/amp-outbound2;"
+   },
+   "description": "Apollo enables users to find contact info, connect with buyers, track emails, and more for free.",
+   "externally_connectable": {
+      "matches": [ "https://www.apollo.io/*", "https://beta.apollo.io/*", "https://app.apollo.io/*", "https://extension.apollo.io/*" ]
+   },
+   "host_permissions": [ "*://*/*" ],
+   "icons": {
+      "128": "img/4sw7x_rNdM_icon-128m369l.png",
+      "16": "img/91ipw_rNdM_icon-16ipgmu.png",
+      "48": "img/s4lkv_rNdM_icon-48rxxk4.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjmC4FLNiMjrjLP9eTKGD4vPcXRg8Gb/QlHlbY44MB4OuTlrkBky5aWbaAjGDNhG+Q6m6nRKjqKXxkX7mUMRmTv9AJOctwbwhQYuDuykYvXH6IEZO2kYp3eD96HNGN+aUjrrBl/6OSotwYGibxTfoPf8Hn3N8KJE4RycSw+9hjhZ8ZK35wHuXShrKGQL+jZQo9DWGnGMv5zydT/h3s0rskvTmWgQtgeU0fhZ7cAsnU4pVLQJQAxVsGnS1I2TbqcT0XFNwC7tehn6Xm4sZZOmqqIS+eO8jtbGPWciR8xplvxzjj7in8x58lUBbR6XHXv9X7z/X9eJz0FfTFw6ZmwSl9QIDAQAB",
+   "manifest_version": 3,
+   "name": "Apollo.io: Free B2B Phone Number & Email Finder",
+   "permissions": [ "contextMenus", "notifications", "scripting", "storage", "tabs", "webNavigation", "sidePanel" ],
+   "short_name": "Apollo.io",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "14.1.3",
+   "web_accessible_resources": [ {
+      "matches": [ "\u003Call_urls>" ],
+      "resources": [ "loading.html", "32td8_rNdM_panelvltqc.html", "c1dof_rNdM_windowd8y3x.html", "v5h3l_rNdM_sidebar-mainb4roj.html", "qy46j_rNdM_linkedin-sidebar4fxad.html", "eq5vg_rNdM_salesforce-sidebar0vee2.html", "3yfn9_rNdM_salesforce-toolbar3b91v.html", "1bvl8_rNdM_apollo-everywhere-sidebarmzrnm.html", "w8gzc_rNdM_gcal-sidebarkfd1k.html", "poui9_rNdM_hubspot-sidebartngwo.html", "68atr_rNdM_hubspot-toolbarg7iwa.html", "state-sync-iframe.html", "9ctwv_rNdM_side-paneluww8n.html", "voice-window.html", "microphone-access.html", "3j10m_rNdM_empty-sidebarynwb8.html", "img/*", "fonts/*", "js/*", "js/*.js", "json/*", "js/css/*", "*.css" ]
+   } ]
+}

@@ -1,0 +1,14 @@
+2026/03/10-11:34:13.556 197a61b Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_vercel.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/03/10-11:34:13.557 197a61b Recovering log #10
+2026/03/10-11:34:13.557 197a61b Reusing old log /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_vercel.com_0.indexeddb.leveldb/000010.log 
+2026/03/10-11:34:13.577 197a627 Level-0 table #15: started
+2026/03/10-11:34:13.582 197a627 Level-0 table #15: 897 bytes OK
+2026/03/10-11:34:13.591 197a627 Delete type=0 #10
+2026/03/10-11:34:13.591 197a61b Manual compaction at level-0 from '\x00\x02\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x03\x00\x00\x00' @ 0 : 0; will stop at (end)
+2026/03/10-11:34:13.591 197a61b Manual compaction at level-1 from '\x00\x02\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x03\x00\x00\x00' @ 0 : 0; will stop at '\x00\x02\x00\x00\xc8\x06\x00S\x00c\x00o\x00p\x00e\x00s' @ 513 : 0
+2026/03/10-11:34:13.591 197a61b Compacting 1@1 + 1@2 files
+2026/03/10-11:34:13.592 197a61b Generated table #16@1: 9 keys, 315 bytes
+2026/03/10-11:34:13.592 197a61b Compacted 1@1 + 1@2 files => 315 bytes
+2026/03/10-11:34:13.593 197a61b compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/03/10-11:34:13.593 197a61b Delete type=2 #15
+2026/03/10-11:34:13.593 197a61b Manual compaction at level-1 from '\x00\x02\x00\x00\xc8\x06\x00S\x00c\x00o\x00p\x00e\x00s' @ 513 : 0 .. '\x00\x03\x00\x00\x00' @ 0 : 0; will stop at (end)

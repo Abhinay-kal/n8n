@@ -1,0 +1,6 @@
+2026/04/23-15:55:30.476 1eb8cce Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_www.hackerrank.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/04/23-15:55:30.476 1eb8cce Recovering log #4
+2026/04/23-15:55:30.477 1eb8cce Reusing old log /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_www.hackerrank.com_0.indexeddb.leveldb/000004.log 
+2026/04/23-16:16:33.338 1eb8cd0 Level-0 table #8: started
+2026/04/23-16:16:33.354 1eb8cd0 Level-0 table #8: 940335 bytes OK
+2026/04/23-16:16:33.356 1eb8cd0 Delete type=0 #4

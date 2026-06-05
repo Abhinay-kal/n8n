@@ -1,0 +1,15 @@
+2026/05/08-10:49:56.392 26cff16 Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_www.figma.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/05/08-10:49:56.392 26cff16 Recovering log #7
+2026/05/08-10:49:56.393 26cff16 Reusing old log /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_www.figma.com_0.indexeddb.leveldb/000007.log 
+2026/05/08-10:50:38.590 26cff19 Level-0 table #12: started
+2026/05/08-10:50:38.592 26cff19 Level-0 table #12: 4660 bytes OK
+2026/05/08-10:50:38.599 26cff19 Delete type=0 #7
+2026/05/08-10:50:38.600 26cff19 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2026/05/08-10:50:38.600 26cff19 Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x04\x01\x02\x013\x00[\x00D\x00E\x00F\x00A\x00U\x00L\x00T\x00]\x00!\x001\x00:\x008\x001\x002\x000\x001\x005\x001\x006\x003\x003\x003\x008\x00:\x00w\x00e\x00b\x00:\x000\x00c\x003\x001\x001\x004\x008\x00f\x004\x000\x00e\x001\x008\x00d\x00e\x008\x00e\x002\x00a\x001\x003\x003' @ 317 : 1
+2026/05/08-10:50:38.600 26cff19 Compacting 1@1 + 1@2 files
+2026/05/08-10:50:38.602 26cff19 Generated table #13@1: 96 keys, 1946 bytes
+2026/05/08-10:50:38.602 26cff19 Compacted 1@1 + 1@2 files => 1946 bytes
+2026/05/08-10:50:38.603 26cff19 compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/05/08-10:50:38.603 26cff19 Delete type=2 #12
+2026/05/08-10:50:38.603 26cff19 Delete type=2 #9
+2026/05/08-10:50:38.604 26cff19 Manual compaction at level-1 from '\x00\x04\x01\x02\x013\x00[\x00D\x00E\x00F\x00A\x00U\x00L\x00T\x00]\x00!\x001\x00:\x008\x001\x002\x000\x001\x005\x001\x006\x003\x003\x003\x008\x00:\x00w\x00e\x00b\x00:\x000\x00c\x003\x001\x001\x004\x008\x00f\x004\x000\x00e\x001\x008\x00d\x00e\x008\x00e\x002\x00a\x001\x003\x003' @ 317 : 1 .. (end); will stop at (end)

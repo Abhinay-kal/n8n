@@ -1,0 +1,15 @@
+2026/05/04-15:52:13.750 26cff24 Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_in.pinterest.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/05/04-15:52:13.750 26cff24 Recovering log #10
+2026/05/04-15:52:13.750 26cff24 Reusing old log /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_in.pinterest.com_0.indexeddb.leveldb/000010.log 
+2026/05/04-16:03:23.120 26cff16 Level-0 table #15: started
+2026/05/04-16:03:23.133 26cff16 Level-0 table #15: 1136101 bytes OK
+2026/05/04-16:03:23.142 26cff16 Delete type=0 #10
+2026/05/04-16:03:23.143 26cff16 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2026/05/04-16:03:23.143 26cff16 Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x01\x01\x02\x01$\x00f\x00f\x00a\x009\x002\x001\x000\x005\x00-\x00c\x006\x004\x008\x00-\x004\x006\x001\x002\x00-\x00b\x009\x006\x00f\x00-\x00f\x00c\x002\x00b\x00d\x001\x000\x006\x005\x000\x006\x00e' @ 54947 : 1
+2026/05/04-16:03:23.143 26cff16 Compacting 1@1 + 1@2 files
+2026/05/04-16:03:23.147 26cff16 Generated table #16@1: 70 keys, 16480 bytes
+2026/05/04-16:03:23.148 26cff16 Compacted 1@1 + 1@2 files => 16480 bytes
+2026/05/04-16:03:23.149 26cff16 compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/05/04-16:03:23.149 26cff16 Delete type=2 #15
+2026/05/04-16:03:23.149 26cff16 Delete type=2 #12
+2026/05/04-16:03:23.150 26cff16 Manual compaction at level-1 from '\x00\x01\x01\x02\x01$\x00f\x00f\x00a\x009\x002\x001\x000\x005\x00-\x00c\x006\x004\x008\x00-\x004\x006\x001\x002\x00-\x00b\x009\x006\x00f\x00-\x00f\x00c\x002\x00b\x00d\x001\x000\x006\x005\x000\x006\x00e' @ 54947 : 1 .. (end); will stop at (end)

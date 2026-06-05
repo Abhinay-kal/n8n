@@ -1,0 +1,17 @@
+<svg width="103" height="93" viewBox="0 0 103 93" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="1.25" y="18" width="88.75" height="75" fill="#C7DCFC"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M90.625 17.375H0.625V93H90.625V17.375ZM1.25 84.875V25.5C1.25 21.3579 4.60786 18 8.75 18H82.5C86.6421 18 90 21.3579 90 25.5V72.375C90 83.4207 81.0457 92.375 70 92.375H8.75C4.60786 92.375 1.25 89.0171 1.25 84.875Z" fill="black"/>
+<ellipse cx="21.1029" cy="72.871" rx="7.35294" ry="7.35294" fill="black"/>
+<ellipse cx="46.434" cy="72.871" rx="7.35294" ry="7.35294" fill="black"/>
+<circle cx="71.7646" cy="72.871" r="7.35294" fill="black"/>
+<ellipse cx="21.1029" cy="48.7904" rx="7.35294" ry="7.35294" fill="black"/>
+<ellipse cx="46.434" cy="48.7904" rx="7.35294" ry="7.35294" fill="black"/>
+<circle cx="71.7646" cy="48.7904" r="7.35294" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M90.3125 32.0625H1.25V31.4375H90.3125V32.0625Z" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M20.625 18L20.625 6.75L21.25 6.75L21.25 18L20.625 18Z" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M46.25 18L46.25 6.75L46.875 6.75L46.875 18L46.25 18Z" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M71.875 18L71.875 6.75L72.5 6.75L72.5 18L71.875 18Z" fill="black"/>
+<path d="M83.75 1C93.8292 1 102 9.17081 102 19.25C102 29.3292 93.8292 37.5 83.75 37.5C73.6708 37.5 65.5 29.3292 65.5 19.25C65.5 9.17081 73.6708 1 83.75 1Z" fill="black" stroke="black"/>
+<rect x="83.125" y="9.875" width="1.25" height="15" fill="#F7F7F7"/>
+<rect x="83.125" y="27.375" width="1.25" height="1.25" fill="#F7F7F7"/>
+</svg>

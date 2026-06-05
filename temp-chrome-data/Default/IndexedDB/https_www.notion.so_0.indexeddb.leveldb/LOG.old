@@ -1,0 +1,17 @@
+2026/05/22-14:40:41.222 325075a Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_www.notion.so_0.indexeddb.leveldb/MANIFEST-000001
+2026/05/22-14:40:41.223 325075a Recovering log #4
+2026/05/22-14:40:41.224 325075a Reusing old log /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_www.notion.so_0.indexeddb.leveldb/000004.log 
+2026/05/22-14:41:11.210 3250748 Level-0 table #8: started
+2026/05/22-14:41:11.211 3250748 Level-0 table #8: 19552 bytes OK
+2026/05/22-14:41:11.218 3250748 Delete type=0 #4
+2026/05/22-14:41:11.219 3250748 Manual compaction at level-0 from '\x00\x04\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x05\x00\x00\x00' @ 0 : 0; will stop at (end)
+2026/05/22-14:42:03.624 325075a Level-0 table #10: started
+2026/05/22-14:42:03.626 325075a Level-0 table #10: 989 bytes OK
+2026/05/22-14:42:03.628 325075a Delete type=0 #7
+2026/05/22-14:42:03.629 325075a Manual compaction at level-0 from '\x00\x05\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x06\x00\x00\x00' @ 0 : 0; will stop at '\x00\x05\x00\x00\x05' @ 839 : 1
+2026/05/22-14:42:03.629 325075a Compacting 1@0 + 1@1 files
+2026/05/22-14:42:03.631 325075a Generated table #11@0: 232 keys, 4032 bytes
+2026/05/22-14:42:03.631 325075a Compacted 1@0 + 1@1 files => 4032 bytes
+2026/05/22-14:42:03.633 325075a compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/05/22-14:42:03.634 325075a Delete type=2 #10
+2026/05/22-14:42:03.635 325075a Manual compaction at level-0 from '\x00\x05\x00\x00\x05' @ 839 : 1 .. '\x00\x06\x00\x00\x00' @ 0 : 0; will stop at (end)

@@ -1,0 +1,6 @@
+2026/04/29-12:17:49.829 26cff19 Creating DB /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_www.1mg.com_0.indexeddb.leveldb since it was missing.
+2026/04/29-12:17:49.833 26cff19 Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_www.1mg.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/04/29-12:18:13.367 26cff19 Level-0 table #5: started
+2026/04/29-12:18:13.369 26cff19 Level-0 table #5: 787 bytes OK
+2026/04/29-12:18:13.372 26cff19 Delete type=0 #3
+2026/04/29-12:18:13.372 26cff19 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

@@ -1,0 +1,5 @@
+2026/06/03-10:23:24.381 d8cc79 Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_www.notion.so_0.indexeddb.leveldb/MANIFEST-000001
+2026/06/03-10:23:24.381 d8cc79 Recovering log #9
+2026/06/03-10:23:24.381 d8cc79 Reusing old log /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_www.notion.so_0.indexeddb.leveldb/000009.log 
+2026/06/03-10:23:24.381 d8cc79 Delete type=2 #8
+2026/06/03-10:23:24.711 d8cc85 Manual compaction at level-0 from '\x00\x06\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x07\x00\x00\x00' @ 0 : 0; will stop at (end)

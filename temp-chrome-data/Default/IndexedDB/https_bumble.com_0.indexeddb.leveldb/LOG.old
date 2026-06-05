@@ -1,0 +1,6 @@
+2026/05/29-23:19:15.323 5ff5fe Creating DB /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_bumble.com_0.indexeddb.leveldb since it was missing.
+2026/05/29-23:19:15.326 5ff5fe Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_bumble.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/05/30-10:41:43.940 5ff601 Level-0 table #5: started
+2026/05/30-10:41:43.947 5ff601 Level-0 table #5: 1506 bytes OK
+2026/05/30-10:41:43.955 5ff601 Delete type=0 #3
+2026/05/30-10:41:43.956 5ff601 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

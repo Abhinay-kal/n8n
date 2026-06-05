@@ -1,0 +1,6 @@
+2025/12/14-19:56:23.260 d12425 Creating DB /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_www.hindustantimes.com_0.indexeddb.leveldb since it was missing.
+2025/12/14-19:56:23.262 d12425 Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_www.hindustantimes.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/12/26-14:51:25.386 d12428 Level-0 table #5: started
+2025/12/26-14:51:25.388 d12428 Level-0 table #5: 16368 bytes OK
+2025/12/26-14:51:25.390 d12428 Delete type=0 #3
+2025/12/26-14:51:25.391 d12428 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

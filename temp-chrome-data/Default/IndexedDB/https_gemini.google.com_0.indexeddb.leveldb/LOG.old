@@ -1,0 +1,6 @@
+2026/05/27-11:51:31.138 132691 Creating DB /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_gemini.google.com_0.indexeddb.leveldb since it was missing.
+2026/05/27-11:51:31.141 132691 Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_gemini.google.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/05/27-14:31:41.376 132691 Level-0 table #5: started
+2026/05/27-14:31:41.377 132691 Level-0 table #5: 1653 bytes OK
+2026/05/27-14:31:41.384 132691 Delete type=0 #3
+2026/05/27-14:31:41.385 132691 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
