@@ -9,3 +9,8 @@ node_modules/
 
 # Credentials
 .env
+cache/
+chrome-data/
+temp-chrome-data/
+browser-profile/
+
