@@ -33,7 +33,10 @@ class Plugin {
 
     public function activate() {
         $repo = new SettingsRepository();
-        $config = new ConfigService($repo);
+        // Since SecretStore requires repo, we use a temporary raw logic or just inject it properly if we need to.
+        // For identity generation, configService is safe to use.
+        $secretStore = new \SeoOptAgent\Security\WordPressSecretStore($repo);
+        $config = new ConfigService($repo, $secretStore);
         
         $identity = $config->getIdentity();
         $identityArray = $identity->toArray();
@@ -60,10 +63,13 @@ class Plugin {
         $identityArray['environment'] = wp_get_environment_type();
         
         $config->updateIdentity(new PluginIdentity($identityArray));
+        
+        CronManager::scheduleEvents();
     }
 
     public function deactivate() {
         flush_rewrite_rules();
+        CronManager::clearEvents();
     }
 
     public function run() {

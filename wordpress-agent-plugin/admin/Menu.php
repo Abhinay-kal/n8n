@@ -6,10 +6,12 @@ use SeoOptAgent\Security\Permissions;
 class Menu {
     private $configService;
     private $registrationService;
+    private $heartbeatService;
 
-    public function __construct($configService, $registrationService) {
+    public function __construct($configService, $registrationService, $heartbeatService) {
         $this->configService = $configService;
         $this->registrationService = $registrationService;
+        $this->heartbeatService = $heartbeatService;
     }
 
     public function register() {
@@ -42,7 +44,7 @@ class Menu {
             __('Connection', 'seo-opt-agent'),
             Permissions::MANAGE_CAPABILITY,
             'seo-opt-agent-connection',
-            [new SettingsPage($this->configService, $this->registrationService, new Notices()), 'renderPage']
+            [new SettingsPage($this->configService, $this->registrationService, $this->heartbeatService, new Notices()), 'renderPage']
         );
 
         add_submenu_page(

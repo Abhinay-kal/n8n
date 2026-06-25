@@ -3,6 +3,7 @@ namespace SeoOptAgent\Admin;
 
 use SeoOptAgent\Services\ConfigService;
 use SeoOptAgent\Services\RegistrationService;
+use SeoOptAgent\Services\HeartbeatService;
 use SeoOptAgent\Security\Nonce;
 use SeoOptAgent\Security\Permissions;
 use SeoOptAgent\Models\ProtocolVersion;
@@ -10,11 +11,13 @@ use SeoOptAgent\Models\ProtocolVersion;
 class SettingsPage {
     private $config;
     private $registration;
+    private $heartbeat;
     private $notices;
 
-    public function __construct(ConfigService $config, RegistrationService $registration, Notices $notices) {
+    public function __construct(ConfigService $config, RegistrationService $registration, HeartbeatService $heartbeat, Notices $notices) {
         $this->config = $config;
         $this->registration = $registration;
+        $this->heartbeat = $heartbeat;
         $this->notices = $notices;
     }
 
@@ -65,7 +68,12 @@ class SettingsPage {
         $bIdentity = $this->config->getBackendIdentity();
         $connStatus = $this->config->getConnectionStatus()->getLabel();
         $regStatus = $this->config->getRegistrationStatus()->getLabel();
+        $presenceStatus = $this->config->getPresenceStatus()->getLabel();
         $lastError = $this->config->getLastConnectionError();
+        
+        $lastHb = $this->config->getLastHeartbeatTime();
+        $nextHb = wp_next_scheduled('seo_opt_agent_heartbeat');
+        $latency = $this->config->getLastHeartbeatLatency();
         
         $protocol = new ProtocolVersion();
 
@@ -86,26 +94,6 @@ class SettingsPage {
                     </tr>
                 </table>
 
-                <h2><?php esc_html_e('Plugin Identity (Read-Only)', 'seo-opt-agent'); ?></h2>
-                <table class="form-table">
-                    <tr>
-                        <th scope="row"><?php esc_html_e('Plugin UUID', 'seo-opt-agent'); ?></th>
-                        <td><code><?php echo esc_html($identity->getPluginUuid()); ?></code></td>
-                    </tr>
-                    <tr>
-                        <th scope="row"><?php esc_html_e('Installation UUID', 'seo-opt-agent'); ?></th>
-                        <td><code><?php echo esc_html($identity->getInstallationUuid()); ?></code></td>
-                    </tr>
-                    <tr>
-                        <th scope="row"><?php esc_html_e('Generated At', 'seo-opt-agent'); ?></th>
-                        <td><?php echo esc_html($identity->getGeneratedAt() ? date('Y-m-d H:i:s', $identity->getGeneratedAt()) : 'N/A'); ?></td>
-                    </tr>
-                    <tr>
-                        <th scope="row"><?php esc_html_e('Protocol Version', 'seo-opt-agent'); ?></th>
-                        <td><?php echo esc_html($protocol->getValue()); ?></td>
-                    </tr>
-                </table>
-
                 <h2><?php esc_html_e('Connection State', 'seo-opt-agent'); ?></h2>
                 <table class="form-table">
                     <tr>
@@ -117,20 +105,20 @@ class SettingsPage {
                         <td><strong id="seo-opt-reg-text"><?php echo esc_html($regStatus); ?></strong></td>
                     </tr>
                     <tr>
-                        <th scope="row"><?php esc_html_e('Backend Version', 'seo-opt-agent'); ?></th>
-                        <td id="seo-opt-backend-version"><?php echo esc_html($bIdentity->getBackendVersion() ?: 'N/A'); ?></td>
+                        <th scope="row"><?php esc_html_e('Presence Status', 'seo-opt-agent'); ?></th>
+                        <td><strong id="seo-opt-presence-text"><?php echo esc_html($presenceStatus); ?></strong></td>
                     </tr>
                     <tr>
-                        <th scope="row"><?php esc_html_e('API Version', 'seo-opt-agent'); ?></th>
-                        <td id="seo-opt-api-version"><?php echo esc_html($bIdentity->getApiVersion() ?: 'N/A'); ?></td>
+                        <th scope="row"><?php esc_html_e('Last Heartbeat', 'seo-opt-agent'); ?></th>
+                        <td id="seo-opt-last-hb"><?php echo $lastHb ? date('Y-m-d H:i:s', $lastHb) : 'Never'; ?></td>
                     </tr>
                     <tr>
-                        <th scope="row"><?php esc_html_e('Backend Protocol', 'seo-opt-agent'); ?></th>
-                        <td id="seo-opt-protocol-version"><?php echo esc_html($bIdentity->getProtocolVersion() ?: 'N/A'); ?></td>
+                        <th scope="row"><?php esc_html_e('Next Heartbeat', 'seo-opt-agent'); ?></th>
+                        <td><?php echo $nextHb ? date('Y-m-d H:i:s', $nextHb) : 'Not Scheduled'; ?></td>
                     </tr>
                     <tr>
-                        <th scope="row"><?php esc_html_e('Capabilities', 'seo-opt-agent'); ?></th>
-                        <td id="seo-opt-capabilities"><?php echo esc_html(implode(', ', $bIdentity->getCapabilities()) ?: 'None'); ?></td>
+                        <th scope="row"><?php esc_html_e('Latency', 'seo-opt-agent'); ?></th>
+                        <td id="seo-opt-latency"><?php echo $latency ? esc_html($latency) . ' ms' : 'N/A'; ?></td>
                     </tr>
                     <tr>
                         <th scope="row"><?php esc_html_e('Last Error', 'seo-opt-agent'); ?></th>
@@ -143,6 +131,7 @@ class SettingsPage {
                     <button type="button" id="seo-opt-handshake" class="button button-secondary"><?php esc_html_e('Handshake', 'seo-opt-agent'); ?></button>
                     <button type="button" id="seo-opt-register" class="button button-secondary"><?php esc_html_e('Register', 'seo-opt-agent'); ?></button>
                     <button type="button" id="seo-opt-disconnect" class="button button-secondary"><?php esc_html_e('Disconnect', 'seo-opt-agent'); ?></button>
+                    <button type="button" id="seo-opt-heartbeat" class="button button-secondary"><?php esc_html_e('Send Heartbeat', 'seo-opt-agent'); ?></button>
                 </p>
             </form>
         </div>
@@ -174,6 +163,25 @@ class SettingsPage {
         $this->verifyAjax();
         $result = $this->registration->disconnect();
         $this->respondWithResult($result);
+    }
+
+    public function handleHeartbeat() {
+        $this->verifyAjax();
+        $result = $this->heartbeat->runHeartbeat();
+        
+        $response = [
+            'message' => $result->getMessage(),
+            'presence_status' => $result->getPresenceStatus()->getLabel(),
+            'latency' => $result->getLatencyMs() . ' ms',
+            'last_hb' => date('Y-m-d H:i:s', time()),
+            'last_error' => $this->config->getLastConnectionError()
+        ];
+        
+        if ($result->isSuccess()) {
+            wp_send_json_success($response);
+        } else {
+            wp_send_json_error($response);
+        }
     }
 
     private function respondWithResult($result) {

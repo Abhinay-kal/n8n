@@ -985,18 +985,18 @@
     "semantic_hash": ""
   },
   "wordpress-agent-plugin/admin/SettingsPage.php": {
-    "mtime": 1782391334.9458356,
-    "ast_hash": "b6747ba948c886580de4742c7c956736",
+    "mtime": 1782391987.249141,
+    "ast_hash": "a78e09535499edfaae8d7ce5d6b30f02",
     "semantic_hash": ""
   },
   "wordpress-agent-plugin/api/BackendClient.php": {
-    "mtime": 1782391334.9446564,
+    "mtime": 1782391987.248427,
     "ast_hash": "3bf479752e2549680a4d5258025337a7",
     "semantic_hash": ""
   },
   "wordpress-agent-plugin/assets/js/admin.js": {
-    "mtime": 1782391334.9461017,
-    "ast_hash": "5cce76c52c7fabde91a41fbec4ccfdbc",
+    "mtime": 1782391987.2494638,
+    "ast_hash": "9ba7f55b567e8dd0fb3075db62274df8",
     "semantic_hash": ""
   },
   "wordpress-agent-plugin/bootstrap/Loader.php": {
@@ -1010,8 +1010,8 @@
     "semantic_hash": ""
   },
   "wordpress-agent-plugin/bootstrap/ServiceContainer.php": {
-    "mtime": 1782391334.945385,
-    "ast_hash": "3a76b564e552bcfdc112d8401e173ea4",
+    "mtime": 1782391987.2488816,
+    "ast_hash": "fb6b6ef5d20149547deaddf78fa77e88",
     "semantic_hash": ""
   },
   "wordpress-agent-plugin/config/Constants.php": {
@@ -1022,11 +1022,6 @@
   "wordpress-agent-plugin/repository/SettingsRepository.php": {
     "mtime": 1782390952.12293,
     "ast_hash": "440c9e4e8683487ec12845f5201de069",
-    "semantic_hash": ""
-  },
-  "wordpress-agent-plugin/scaffold.py": {
-    "mtime": 1782389956.2920773,
-    "ast_hash": "319638dfce33b27085c007728d6b7e7e",
     "semantic_hash": ""
   },
   "wordpress-agent-plugin/security/Nonce.php": {
@@ -1104,14 +1099,9 @@
     "ast_hash": "ca806d6f5407036e7fc983e46905f061",
     "semantic_hash": ""
   },
-  "wordpress-agent-plugin/scaffold_phase1_5.py": {
-    "mtime": 1782390945.660321,
-    "ast_hash": "fde7794465e7cd4bc6bc8604d816d94a",
-    "semantic_hash": ""
-  },
   "wordpress-agent-plugin/services/ConfigService.php": {
-    "mtime": 1782391334.944391,
-    "ast_hash": "89abea9cb7b27917009c3d5ad6f7fb36",
+    "mtime": 1782391987.2483006,
+    "ast_hash": "85164cfa1c39a858d66f96f4113a05c9",
     "semantic_hash": ""
   },
   "wordpress-agent-plugin/utils/NullLogger.php": {
@@ -1129,14 +1119,49 @@
     "ast_hash": "76f20c165ce260244e999c6d6f4f9cad",
     "semantic_hash": ""
   },
-  "wordpress-agent-plugin/scaffold_phase2.py": {
-    "mtime": 1782391325.4979494,
-    "ast_hash": "92f64299695e138df43cc86c9fb8ff15",
+  "wordpress-agent-plugin/services/RegistrationService.php": {
+    "mtime": 1782391987.2486567,
+    "ast_hash": "a24e8ee030971b9e62df3327e0f8ca28",
     "semantic_hash": ""
   },
-  "wordpress-agent-plugin/services/RegistrationService.php": {
-    "mtime": 1782391334.944876,
-    "ast_hash": "5a92365c8057706233b14d002ea5fe69",
+  "wordpress-agent-plugin/models/BackendIdentity.php": {
+    "mtime": 1782391987.24774,
+    "ast_hash": "080892cd66828b1b259b2f5adf99b496",
+    "semantic_hash": ""
+  },
+  "wordpress-agent-plugin/models/HandshakeResult.php": {
+    "mtime": 1782391987.247875,
+    "ast_hash": "9abd2f6cab46ccf0fbee8726b9acfd4f",
+    "semantic_hash": ""
+  },
+  "wordpress-agent-plugin/models/ProtocolVersion.php": {
+    "mtime": 1782391987.2474616,
+    "ast_hash": "b2f7460bb1d56e2ae762619099abee80",
+    "semantic_hash": ""
+  },
+  "wordpress-agent-plugin/models/RegistrationResult.php": {
+    "mtime": 1782391987.2479992,
+    "ast_hash": "7f87d605cc3e7753db3dc3ec209ecb73",
+    "semantic_hash": ""
+  },
+  "wordpress-agent-plugin/models/RegistrationStatus.php": {
+    "mtime": 1782391987.2475972,
+    "ast_hash": "446b0e227a9751971f05f627a0b15933",
+    "semantic_hash": ""
+  },
+  "wordpress-agent-plugin/security/SecretStoreInterface.php": {
+    "mtime": 1782391987.2471187,
+    "ast_hash": "4da4c64033f84584748d24b2ffac8e33",
+    "semantic_hash": ""
+  },
+  "wordpress-agent-plugin/security/WordPressSecretStore.php": {
+    "mtime": 1782391987.2473025,
+    "ast_hash": "8c18f480f7a901ac77e8423f4cb2a244",
+    "semantic_hash": ""
+  },
+  "wordpress-agent-plugin/services/CompatibilityService.php": {
+    "mtime": 1782391987.2481515,
+    "ast_hash": "9f57f9abc041da3d5f5013615ca9e8aa",
     "semantic_hash": ""
   }
 }

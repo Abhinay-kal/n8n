@@ -1,5 +1,5 @@
 jQuery(document).ready(function($) {
-    function handleAction($btn, actionName) {
+    function handleAction($btn, actionName, isHeartbeat = false) {
         var originalText = $btn.text();
         $btn.text(seoOptAgentObj.loading_text).prop('disabled', true);
         $('#seo-opt-notices-container').html('');
@@ -12,12 +12,14 @@ jQuery(document).ready(function($) {
             var html = '<div class="notice ' + noticeClass + ' is-dismissible"><p>' + response.data.message + '</p></div>';
             $('#seo-opt-notices-container').html(html);
             
-            $('#seo-opt-status-text').text(response.data.status);
-            $('#seo-opt-reg-text').text(response.data.reg_status);
-            $('#seo-opt-backend-version').text(response.data.backend_version);
-            $('#seo-opt-api-version').text(response.data.api_version);
-            $('#seo-opt-protocol-version').text(response.data.protocol_version);
-            $('#seo-opt-capabilities').text(response.data.capabilities);
+            if (isHeartbeat) {
+                $('#seo-opt-presence-text').text(response.data.presence_status);
+                $('#seo-opt-latency').text(response.data.latency);
+                $('#seo-opt-last-hb').text(response.data.last_hb);
+            } else {
+                $('#seo-opt-status-text').text(response.data.status);
+                $('#seo-opt-reg-text').text(response.data.reg_status);
+            }
             
             if (response.success) {
                 $('#seo-opt-last-error').text('None').css('color', 'inherit');
@@ -44,6 +46,11 @@ jQuery(document).ready(function($) {
     $('#seo-opt-disconnect').on('click', function(e) {
         e.preventDefault();
         handleAction($(this), 'seo_opt_disconnect');
+    });
+
+    $('#seo-opt-heartbeat').on('click', function(e) {
+        e.preventDefault();
+        handleAction($(this), 'seo_opt_heartbeat', true);
     });
 
     $('form').on('submit', function() {

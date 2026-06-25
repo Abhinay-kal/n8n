@@ -5,6 +5,7 @@ use SeoOptAgent\Repository\SettingsRepository;
 use SeoOptAgent\Security\SecretStoreInterface;
 use SeoOptAgent\Models\ConnectionStatus;
 use SeoOptAgent\Models\RegistrationStatus;
+use SeoOptAgent\Models\PresenceStatus;
 use SeoOptAgent\Models\PluginIdentity;
 use SeoOptAgent\Models\BackendIdentity;
 
@@ -32,7 +33,6 @@ class ConfigService {
         return rtrim($this->cache['backend_url'] ?? '', '/');
     }
 
-    // Secrets are now handled by SecretStore
     public function getApiKey(): string {
         return $this->secretStore->getSecret('api_key');
     }
@@ -69,6 +69,38 @@ class ConfigService {
         $this->save('registration_status', $status->getValue());
     }
 
+    public function getPresenceStatus(): PresenceStatus {
+        return new PresenceStatus($this->cache['presence_status'] ?? PresenceStatus::UNKNOWN);
+    }
+
+    public function setPresenceStatus(PresenceStatus $status): void {
+        $this->save('presence_status', $status->getValue());
+    }
+
+    public function getLastHeartbeatTime(): int {
+        return (int)($this->cache['last_heartbeat_time'] ?? 0);
+    }
+
+    public function setLastHeartbeatTime(int $time): void {
+        $this->save('last_heartbeat_time', $time);
+    }
+
+    public function getLastHeartbeatLatency(): int {
+        return (int)($this->cache['last_heartbeat_latency'] ?? 0);
+    }
+
+    public function setLastHeartbeatLatency(int $latency): void {
+        $this->save('last_heartbeat_latency', $latency);
+    }
+
+    public function getConsecutiveHeartbeatFailures(): int {
+        return (int)($this->cache['consecutive_hb_failures'] ?? 0);
+    }
+
+    public function setConsecutiveHeartbeatFailures(int $failures): void {
+        $this->save('consecutive_hb_failures', $failures);
+    }
+
     public function getLastConnectionError(): string {
         return $this->cache['last_error'] ?? '';
     }
@@ -82,7 +114,6 @@ class ConfigService {
     }
 
     public function updateIdentity(PluginIdentity $identity): void {
-        // Validation: never overwrite existing UUIDs
         $existing = $this->getIdentity();
         $data = $identity->toArray();
         

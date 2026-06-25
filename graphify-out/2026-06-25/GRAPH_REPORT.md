@@ -1,16 +1,16 @@
 # Graph Report - n8n  (2026-06-25)
 
 ## Corpus Check
-- 154 files · ~178,626 words
+- 154 files · ~178,670 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 953 nodes · 1174 edges · 108 communities (42 shown, 66 thin omitted)
+- 954 nodes · 1175 edges · 108 communities (42 shown, 66 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 3 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `5ba96425`
+- Built from commit: `8cc2afdd`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -269,11 +269,11 @@ Cohesion: 0.29
 Nodes (6): 1. Project States, 2. Job States, 3. Execution Ownership, 4. Recovery & Reconciliation, 5. Execution Paths, Project Execution Lifecycle (Post-Milestone 4 & 10.5)
 
 ### Community 94 - "Community 94"
-Cohesion: 0.50
-Nodes (3): Agent Rules, Auto-Commit Rule, Continuous Documentation Rule
+Cohesion: 0.40
+Nodes (4): Agent Rules, Auto-Commit Rule, Continuous Documentation Rule, Mandatory Error Handling Standard
 
 ## Knowledge Gaps
-- **257 isolated node(s):** `Notices`, `Notices`, `Loader`, `ConfigService`, `Auto-Commit Rule` (+252 more)
+- **258 isolated node(s):** `Auto-Commit Rule`, `Continuous Documentation Rule`, `Mandatory Error Handling Standard`, `Notices`, `Notices` (+253 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **66 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -283,11 +283,11 @@ _Questions this graph is uniquely positioned to answer:_
 - **Why does `ClaudeManager` connect `Createclaudeerror Components` to `Bootstrapmanager Components`?**
   _High betweenness centrality (0.035) - this node is a cross-community bridge._
 - **Why does `BrowserManager` connect `Browsermanager Components` to `Bootstrapmanager Components`, `Createclaudeerror Components`, `Bootstrapmanager Components`?**
-  _High betweenness centrality (0.022) - this node is a cross-community bridge._
+  _High betweenness centrality (0.021) - this node is a cross-community bridge._
 - **Why does `JobRepository` connect `Jobrepository Components` to `Migrations Components`, `Bootstrapmanager Components`?**
   _High betweenness centrality (0.021) - this node is a cross-community bridge._
-- **What connects `Notices`, `Notices`, `Loader` to the rest of the system?**
-  _257 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `Auto-Commit Rule`, `Continuous Documentation Rule`, `Mandatory Error Handling Standard` to the rest of the system?**
+  _258 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Auditroutes Components` be split into smaller, more focused modules?**
   _Cohesion score 0.05137844611528822 - nodes in this community are weakly interconnected._
 - **Should `Claudeerrors Components` be split into smaller, more focused modules?**
