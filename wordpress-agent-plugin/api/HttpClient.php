@@ -3,6 +3,16 @@ namespace SeoOptAgent\Api;
 
 class HttpClient {
     public function request(string $method, string $url, array $headers = [], array $body = []): array {
+        // Prevent insecure HTTP unless localhost (developer mode)
+        if (strpos($url, 'http://') === 0 && strpos($url, 'http://localhost') === false && strpos($url, 'http://127.0.0.1') === false) {
+            return [
+                'success' => false,
+                'error_code' => 'insecure_connection',
+                'message' => 'Insecure HTTP connections are not allowed.',
+                'status' => 0
+            ];
+        }
+
         $args = [
             'method'      => $method,
             'timeout'     => 15,
@@ -20,9 +30,13 @@ class HttpClient {
         $response = wp_remote_request($url, $args);
 
         if (is_wp_error($response)) {
+            $errorCode = $response->get_error_code();
+            if (strpos($errorCode, 'timeout') !== false) {
+                $errorCode = 'timeout';
+            }
             return [
                 'success' => false,
-                'error_code' => $response->get_error_code(),
+                'error_code' => $errorCode,
                 'message' => $response->get_error_message(),
                 'status' => 0
             ];

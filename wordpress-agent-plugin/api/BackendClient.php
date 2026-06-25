@@ -21,23 +21,30 @@ class BackendClient {
     }
 
     private function request(string $method, string $endpoint, array $body = []): array {
-        $url = rtrim($this->config->getBackendUrl(), '/') . '/' . ltrim($endpoint, '/');
-        $apiKey = $this->config->getApiKey();
-
-        if (empty($url) || empty($apiKey)) {
+        $url = $this->config->getBackendUrl();
+        if (empty($url)) {
             return [
                 'success' => false,
                 'error_code' => 'config_missing',
-                'message' => 'Backend URL or API Key is missing.'
+                'message' => 'Backend URL is missing.'
             ];
         }
+        $fullUrl = rtrim($url, '/') . '/' . ltrim($endpoint, '/');
+        $apiKey = $this->config->getApiKey();
+        $token = $this->config->getRegistrationToken();
 
         $headers = [
-            'x-api-key' => $apiKey,
             'Content-Type' => 'application/json',
             'Accept' => 'application/json'
         ];
 
-        return $this->httpClient->request($method, $url, $headers, $body);
+        if (!empty($apiKey)) {
+            $headers['x-api-key'] = $apiKey;
+        }
+        if (!empty($token)) {
+            $headers['Authorization'] = 'Bearer ' . $token;
+        }
+
+        return $this->httpClient->request($method, $fullUrl, $headers, $body);
     }
 }\n

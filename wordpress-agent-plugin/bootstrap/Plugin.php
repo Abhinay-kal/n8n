@@ -4,7 +4,7 @@ namespace SeoOptAgent\Bootstrap;
 use SeoOptAgent\Config\Constants;
 use SeoOptAgent\Services\ConfigService;
 use SeoOptAgent\Repository\SettingsRepository;
-use SeoOptAgent\Models\PluginMetadata;
+use SeoOptAgent\Models\PluginIdentity;
 
 class Plugin {
     private $loader;
@@ -35,20 +35,31 @@ class Plugin {
         $repo = new SettingsRepository();
         $config = new ConfigService($repo);
         
-        $meta = $config->getMetadata();
-        if (empty($meta->getUuid())) {
-            $meta->setUuid(wp_generate_uuid4());
+        $identity = $config->getIdentity();
+        $identityArray = $identity->toArray();
+        
+        if (empty($identityArray['pluginUuid'])) {
+            $identityArray['pluginUuid'] = wp_generate_uuid4();
         }
-        $meta->setPluginVersion(SEO_OPT_AGENT_VERSION);
-        $meta->setPhpVersion(phpversion());
+        if (empty($identityArray['installationUuid'])) {
+            $identityArray['installationUuid'] = wp_generate_uuid4();
+        }
+        if (empty($identityArray['generatedAt'])) {
+            $identityArray['generatedAt'] = time();
+        }
+
         global $wp_version;
-        $meta->setWpVersion($wp_version);
+        $identityArray['pluginVersion'] = SEO_OPT_AGENT_VERSION;
+        $identityArray['wpVersion'] = $wp_version;
+        $identityArray['phpVersion'] = phpversion();
+        $identityArray['siteUrl'] = site_url();
+        $identityArray['homeUrl'] = home_url();
+        $identityArray['siteName'] = get_bloginfo('name');
+        $identityArray['timezone'] = wp_timezone_string();
+        $identityArray['language'] = get_locale();
+        $identityArray['environment'] = wp_get_environment_type();
         
-        if (empty($meta->getInstalledAt())) {
-            $meta->setInstalledAt(time());
-        }
-        
-        $config->updateMetadata($meta);
+        $config->updateIdentity(new PluginIdentity($identityArray));
     }
 
     public function deactivate() {

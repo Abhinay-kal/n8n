@@ -2,16 +2,21 @@
 namespace SeoOptAgent\Models;
 
 class ConnectionStatus {
-    const CONNECTED = 'connected';
-    const DISCONNECTED = 'disconnected';
-    const NEVER_CONNECTED = 'never_connected';
-    const CONFIG_MISSING = 'config_missing';
-    const UNREACHABLE = 'unreachable';
-    const AUTH_FAILED = 'auth_failed';
+    const NOT_CONFIGURED = 'NOT_CONFIGURED';
+    const CONFIGURED = 'CONFIGURED';
+    const CONNECTING = 'CONNECTING';
+    const HANDSHAKING = 'HANDSHAKING';
+    const REGISTERING = 'REGISTERING';
+    const CONNECTED = 'CONNECTED';
+    const AUTH_FAILED = 'AUTH_FAILED';
+    const VERSION_MISMATCH = 'VERSION_MISMATCH';
+    const SERVER_UNREACHABLE = 'SERVER_UNREACHABLE';
+    const TIMEOUT = 'TIMEOUT';
+    const DISCONNECTED = 'DISCONNECTED';
 
     private $status;
 
-    public function __construct(string $status = self::NEVER_CONNECTED) {
+    public function __construct(string $status = self::NOT_CONFIGURED) {
         $this->status = $status;
     }
 
@@ -21,12 +26,17 @@ class ConnectionStatus {
 
     public function getLabel(): string {
         $map = [
+            self::NOT_CONFIGURED => 'Not Configured',
+            self::CONFIGURED => 'Configured',
+            self::CONNECTING => 'Connecting',
+            self::HANDSHAKING => 'Handshaking',
+            self::REGISTERING => 'Registering',
             self::CONNECTED => 'Connected',
-            self::DISCONNECTED => 'Disconnected',
-            self::NEVER_CONNECTED => 'Never Connected',
-            self::CONFIG_MISSING => 'Configuration Missing',
-            self::UNREACHABLE => 'Backend Unreachable',
             self::AUTH_FAILED => 'Authentication Failed',
+            self::VERSION_MISMATCH => 'Version Mismatch',
+            self::SERVER_UNREACHABLE => 'Backend Unreachable',
+            self::TIMEOUT => 'Timeout',
+            self::DISCONNECTED => 'Disconnected',
         ];
         return $map[$this->status] ?? 'Unknown';
     }

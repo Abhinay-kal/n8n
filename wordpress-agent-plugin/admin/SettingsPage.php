@@ -2,18 +2,18 @@
 namespace SeoOptAgent\Admin;
 
 use SeoOptAgent\Services\ConfigService;
-use SeoOptAgent\Services\ConnectionService;
+use SeoOptAgent\Services\RegistrationService;
 use SeoOptAgent\Security\Nonce;
 use SeoOptAgent\Security\Permissions;
 
 class SettingsPage {
     private $config;
-    private $connection;
+    private $registration;
     private $notices;
 
-    public function __construct(ConfigService $config, ConnectionService $connection, Notices $notices) {
+    public function __construct(ConfigService $config, RegistrationService $registration, Notices $notices) {
         $this->config = $config;
-        $this->connection = $connection;
+        $this->registration = $registration;
         $this->notices = $notices;
     }
 
@@ -24,7 +24,7 @@ class SettingsPage {
     }
 
     public function sanitizeSettings($input) {
-        $sanitized = $this->config->getAll(); // Get existing defaults
+        $sanitized = $this->config->getAll();
         
         if (isset($input['backend_url'])) {
             $sanitized['backend_url'] = esc_url_raw($input['backend_url']);
@@ -45,8 +45,8 @@ class SettingsPage {
         wp_enqueue_script('seo-opt-admin-js', SEO_OPT_AGENT_URL . 'assets/js/admin.js', ['jquery'], SEO_OPT_AGENT_VERSION, true);
         wp_localize_script('seo-opt-admin-js', 'seoOptAgentObj', [
             'ajax_url' => admin_url('admin-ajax.php'),
-            'nonce' => Nonce::create('seo_opt_test_connection'),
-            'saving_text' => __('Testing connection...', 'seo-opt-agent'),
+            'nonce' => Nonce::create('seo_opt_ajax_action'),
+            'loading_text' => __('Processing...', 'seo-opt-agent'),
         ]);
         wp_enqueue_style('seo-opt-admin-css', SEO_OPT_AGENT_URL . 'assets/css/admin.css', [], SEO_OPT_AGENT_VERSION);
     }
@@ -60,9 +60,9 @@ class SettingsPage {
         $apiKey = $this->config->getApiKey();
         $maskedKey = !empty($apiKey) ? str_repeat('*', max(0, strlen($apiKey) - 4)) . substr($apiKey, -4) : '';
         
-        $meta = $this->config->getMetadata();
+        $identity = $this->config->getIdentity();
+        $regData = $this->config->getRegistrationData();
         $status = $this->config->getConnectionStatus()->getLabel();
-        $lastSuccess = $this->config->getLastSuccessfulConnection();
         $lastError = $this->config->getLastConnectionError();
 
         ?>
@@ -82,35 +82,39 @@ class SettingsPage {
                     </tr>
                 </table>
 
-                <h2><?php esc_html_e('System Information (Read-Only)', 'seo-opt-agent'); ?></h2>
+                <h2><?php esc_html_e('Plugin Identity (Read-Only)', 'seo-opt-agent'); ?></h2>
                 <table class="form-table">
                     <tr>
                         <th scope="row"><?php esc_html_e('Plugin UUID', 'seo-opt-agent'); ?></th>
-                        <td><code><?php echo esc_html($meta->getUuid()); ?></code></td>
+                        <td><code><?php echo esc_html($identity->getPluginUuid()); ?></code></td>
                     </tr>
                     <tr>
-                        <th scope="row"><?php esc_html_e('Plugin Version', 'seo-opt-agent'); ?></th>
-                        <td><code><?php echo esc_html($meta->getPluginVersion()); ?></code></td>
+                        <th scope="row"><?php esc_html_e('Installation UUID', 'seo-opt-agent'); ?></th>
+                        <td><code><?php echo esc_html($identity->getInstallationUuid()); ?></code></td>
                     </tr>
                     <tr>
-                        <th scope="row"><?php esc_html_e('WordPress Version', 'seo-opt-agent'); ?></th>
-                        <td><code><?php echo esc_html($meta->getWpVersion()); ?></code></td>
+                        <th scope="row"><?php esc_html_e('Generated At', 'seo-opt-agent'); ?></th>
+                        <td><?php echo esc_html($identity->getGeneratedAt() ? date('Y-m-d H:i:s', $identity->getGeneratedAt()) : 'N/A'); ?></td>
                     </tr>
+                </table>
+
+                <h2><?php esc_html_e('Connection State', 'seo-opt-agent'); ?></h2>
+                <table class="form-table">
                     <tr>
-                        <th scope="row"><?php esc_html_e('PHP Version', 'seo-opt-agent'); ?></th>
-                        <td><code><?php echo esc_html($meta->getPhpVersion()); ?></code></td>
-                    </tr>
-                    <tr>
-                        <th scope="row"><?php esc_html_e('Installation Date', 'seo-opt-agent'); ?></th>
-                        <td><?php echo esc_html($meta->getInstalledAt() ? date('Y-m-d H:i:s', $meta->getInstalledAt()) : 'N/A'); ?></td>
-                    </tr>
-                    <tr>
-                        <th scope="row"><?php esc_html_e('Connection Status', 'seo-opt-agent'); ?></th>
+                        <th scope="row"><?php esc_html_e('Registration Status', 'seo-opt-agent'); ?></th>
                         <td><strong id="seo-opt-status-text"><?php echo esc_html($status); ?></strong></td>
                     </tr>
                     <tr>
-                        <th scope="row"><?php esc_html_e('Last Successful Connection', 'seo-opt-agent'); ?></th>
-                        <td id="seo-opt-last-success"><?php echo esc_html($lastSuccess ? date('Y-m-d H:i:s', $lastSuccess) : 'Never'); ?></td>
+                        <th scope="row"><?php esc_html_e('Backend Version', 'seo-opt-agent'); ?></th>
+                        <td id="seo-opt-backend-version"><?php echo esc_html($regData->getBackendVersion() ?: 'N/A'); ?></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><?php esc_html_e('API Version', 'seo-opt-agent'); ?></th>
+                        <td id="seo-opt-api-version"><?php echo esc_html($regData->getApiVersion() ?: 'N/A'); ?></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><?php esc_html_e('Capabilities', 'seo-opt-agent'); ?></th>
+                        <td id="seo-opt-capabilities"><?php echo esc_html(implode(', ', $regData->getCapabilities()) ?: 'None'); ?></td>
                     </tr>
                     <tr>
                         <th scope="row"><?php esc_html_e('Last Error', 'seo-opt-agent'); ?></th>
@@ -119,35 +123,58 @@ class SettingsPage {
                 </table>
 
                 <p class="submit">
-                    <?php submit_button(__('Save Changes', 'seo-opt-agent'), 'primary', 'submit', false); ?>
-                    <button type="button" id="seo-opt-test-connection" class="button button-secondary"><?php esc_html_e('Test Connection', 'seo-opt-agent'); ?></button>
+                    <?php submit_button(__('Save Settings', 'seo-opt-agent'), 'primary', 'submit', false); ?>
+                    <button type="button" id="seo-opt-handshake" class="button button-secondary"><?php esc_html_e('Handshake', 'seo-opt-agent'); ?></button>
+                    <button type="button" id="seo-opt-register" class="button button-secondary"><?php esc_html_e('Register', 'seo-opt-agent'); ?></button>
+                    <button type="button" id="seo-opt-disconnect" class="button button-secondary"><?php esc_html_e('Disconnect', 'seo-opt-agent'); ?></button>
                 </p>
             </form>
         </div>
         <?php
     }
 
-    public function handleTestConnection() {
-        if (!Nonce::verify($_POST['nonce'], 'seo_opt_test_connection')) {
+    private function verifyAjax() {
+        if (!Nonce::verify($_POST['nonce'], 'seo_opt_ajax_action')) {
             wp_send_json_error(['message' => __('Invalid security token.', 'seo-opt-agent')]);
         }
         if (!Permissions::canManageSettings()) {
             wp_send_json_error(['message' => __('Insufficient permissions.', 'seo-opt-agent')]);
         }
+    }
 
-        $result = $this->connection->testConnection();
+    public function handleHandshake() {
+        $this->verifyAjax();
+        $result = $this->registration->handshake();
+        $this->respondWithResult($result);
+    }
+
+    public function handleRegister() {
+        $this->verifyAjax();
+        $result = $this->registration->register();
+        $this->respondWithResult($result);
+    }
+
+    public function handleDisconnect() {
+        $this->verifyAjax();
+        $result = $this->registration->disconnect();
+        $this->respondWithResult($result);
+    }
+
+    private function respondWithResult($result) {
+        $regData = $this->config->getRegistrationData();
+        $response = [
+            'message' => $result->getMessage(),
+            'status' => $result->getStatus()->getLabel(),
+            'backend_version' => $regData->getBackendVersion() ?: 'N/A',
+            'api_version' => $regData->getApiVersion() ?: 'N/A',
+            'capabilities' => implode(', ', $regData->getCapabilities()) ?: 'None',
+            'last_error' => $this->config->getLastConnectionError()
+        ];
+
         if ($result->isSuccess()) {
-            wp_send_json_success([
-                'message' => __('Connection successful!', 'seo-opt-agent'),
-                'status' => $result->getStatus()->getLabel(),
-                'last_success' => date('Y-m-d H:i:s', $this->config->getLastSuccessfulConnection())
-            ]);
+            wp_send_json_success($response);
         } else {
-            wp_send_json_error([
-                'message' => $result->getMessage(),
-                'status' => $result->getStatus()->getLabel(),
-                'last_error' => $this->config->getLastConnectionError()
-            ]);
+            wp_send_json_error($response);
         }
     }
 }\n

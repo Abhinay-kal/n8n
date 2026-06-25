@@ -3,7 +3,8 @@ namespace SeoOptAgent\Services;
 
 use SeoOptAgent\Repository\SettingsRepository;
 use SeoOptAgent\Models\ConnectionStatus;
-use SeoOptAgent\Models\PluginMetadata;
+use SeoOptAgent\Models\PluginIdentity;
+use SeoOptAgent\Models\RegistrationData;
 
 class ConfigService {
     private $repo;
@@ -18,34 +19,31 @@ class ConfigService {
         return $this->cache;
     }
 
-    private function save(string $key, $value): void {
+    public function save(string $key, $value): void {
         $this->cache[$key] = $value;
         $this->repo->saveSettings($this->cache);
     }
 
     public function getBackendUrl(): string {
-        return $this->cache['backend_url'] ?? '';
+        return rtrim($this->cache['backend_url'] ?? '', '/');
     }
 
     public function getApiKey(): string {
         return $this->cache['api_key'] ?? '';
     }
+    
+    public function getRegistrationToken(): string {
+        $regData = $this->getRegistrationData();
+        return $regData->getRegistrationToken();
+    }
 
     public function getConnectionStatus(): ConnectionStatus {
-        $val = $this->cache['connection_status'] ?? ConnectionStatus::NEVER_CONNECTED;
+        $val = $this->cache['connection_status'] ?? ConnectionStatus::NOT_CONFIGURED;
         return new ConnectionStatus($val);
     }
 
     public function setConnectionStatus(ConnectionStatus $status): void {
         $this->save('connection_status', $status->getValue());
-    }
-
-    public function getLastSuccessfulConnection(): int {
-        return (int)($this->cache['last_success'] ?? 0);
-    }
-
-    public function setLastSuccessfulConnection(int $timestamp): void {
-        $this->save('last_success', $timestamp);
     }
 
     public function getLastConnectionError(): string {
@@ -56,11 +54,19 @@ class ConfigService {
         $this->save('last_error', $error);
     }
 
-    public function getMetadata(): PluginMetadata {
-        return new PluginMetadata($this->cache['metadata'] ?? []);
+    public function getIdentity(): PluginIdentity {
+        return new PluginIdentity($this->cache['identity'] ?? []);
     }
 
-    public function updateMetadata(PluginMetadata $meta): void {
-        $this->save('metadata', $meta->toArray());
+    public function updateIdentity(PluginIdentity $identity): void {
+        $this->save('identity', $identity->toArray());
+    }
+
+    public function getRegistrationData(): RegistrationData {
+        return new RegistrationData($this->cache['registration'] ?? []);
+    }
+
+    public function updateRegistrationData(RegistrationData $data): void {
+        $this->save('registration', $data->toArray());
     }
 }\n

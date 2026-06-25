@@ -7,8 +7,7 @@ use SeoOptAgent\Api\HttpClient;
 use SeoOptAgent\Api\BackendClient;
 use SeoOptAgent\Repository\SettingsRepository;
 use SeoOptAgent\Services\ConfigService;
-use SeoOptAgent\Services\ConnectionService;
-use SeoOptAgent\Services\HealthService;
+use SeoOptAgent\Services\RegistrationService;
 use SeoOptAgent\Utils\NullLogger;
 
 class ServiceContainer {
@@ -20,14 +19,12 @@ class ServiceContainer {
         $httpClient = new HttpClient();
         $backendClient = new BackendClient($httpClient, $configService);
         
-        $healthService = new HealthService();
-        $connectionService = new ConnectionService($backendClient, $configService, $healthService, $logger);
+        $registrationService = new RegistrationService($backendClient, $configService, $logger);
         
         $notices = new Notices();
 
-        // Register Modules
         $modules = [
-            new AdminModule($configService, $connectionService, $notices)
+            new AdminModule($configService, $registrationService, $notices)
         ];
 
         foreach ($modules as $module) {
