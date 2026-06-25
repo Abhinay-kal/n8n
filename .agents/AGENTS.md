@@ -5,3 +5,6 @@ If you have made any file changes or modifications during your turn, you MUST ru
 
 ## Continuous Documentation Rule
 If you add a new endpoint, environment variable, or major feature, you must automatically update the README.md or CHANGELOG.md to reflect these changes.
+
+## Mandatory Error Handling Standard
+Whenever you write a network request, database query, or file operation, you must wrap it in a `try/catch` block and log the error using the project's standard logger (rather than silently ignoring it or just printing to the console).
