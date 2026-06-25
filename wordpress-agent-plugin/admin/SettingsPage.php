@@ -5,6 +5,7 @@ use SeoOptAgent\Services\ConfigService;
 use SeoOptAgent\Services\RegistrationService;
 use SeoOptAgent\Security\Nonce;
 use SeoOptAgent\Security\Permissions;
+use SeoOptAgent\Models\ProtocolVersion;
 
 class SettingsPage {
     private $config;
@@ -32,7 +33,7 @@ class SettingsPage {
         if (isset($input['api_key'])) {
             $newKey = sanitize_text_field($input['api_key']);
             if (strpos($newKey, '****') === false && !empty($newKey)) {
-                $sanitized['api_key'] = $newKey;
+                $this->config->setApiKey($newKey);
             }
         }
         return $sanitized;
@@ -61,9 +62,12 @@ class SettingsPage {
         $maskedKey = !empty($apiKey) ? str_repeat('*', max(0, strlen($apiKey) - 4)) . substr($apiKey, -4) : '';
         
         $identity = $this->config->getIdentity();
-        $regData = $this->config->getRegistrationData();
-        $status = $this->config->getConnectionStatus()->getLabel();
+        $bIdentity = $this->config->getBackendIdentity();
+        $connStatus = $this->config->getConnectionStatus()->getLabel();
+        $regStatus = $this->config->getRegistrationStatus()->getLabel();
         $lastError = $this->config->getLastConnectionError();
+        
+        $protocol = new ProtocolVersion();
 
         ?>
         <div class="wrap">
@@ -96,25 +100,37 @@ class SettingsPage {
                         <th scope="row"><?php esc_html_e('Generated At', 'seo-opt-agent'); ?></th>
                         <td><?php echo esc_html($identity->getGeneratedAt() ? date('Y-m-d H:i:s', $identity->getGeneratedAt()) : 'N/A'); ?></td>
                     </tr>
+                    <tr>
+                        <th scope="row"><?php esc_html_e('Protocol Version', 'seo-opt-agent'); ?></th>
+                        <td><?php echo esc_html($protocol->getValue()); ?></td>
+                    </tr>
                 </table>
 
                 <h2><?php esc_html_e('Connection State', 'seo-opt-agent'); ?></h2>
                 <table class="form-table">
                     <tr>
+                        <th scope="row"><?php esc_html_e('Connection Status', 'seo-opt-agent'); ?></th>
+                        <td><strong id="seo-opt-status-text"><?php echo esc_html($connStatus); ?></strong></td>
+                    </tr>
+                    <tr>
                         <th scope="row"><?php esc_html_e('Registration Status', 'seo-opt-agent'); ?></th>
-                        <td><strong id="seo-opt-status-text"><?php echo esc_html($status); ?></strong></td>
+                        <td><strong id="seo-opt-reg-text"><?php echo esc_html($regStatus); ?></strong></td>
                     </tr>
                     <tr>
                         <th scope="row"><?php esc_html_e('Backend Version', 'seo-opt-agent'); ?></th>
-                        <td id="seo-opt-backend-version"><?php echo esc_html($regData->getBackendVersion() ?: 'N/A'); ?></td>
+                        <td id="seo-opt-backend-version"><?php echo esc_html($bIdentity->getBackendVersion() ?: 'N/A'); ?></td>
                     </tr>
                     <tr>
                         <th scope="row"><?php esc_html_e('API Version', 'seo-opt-agent'); ?></th>
-                        <td id="seo-opt-api-version"><?php echo esc_html($regData->getApiVersion() ?: 'N/A'); ?></td>
+                        <td id="seo-opt-api-version"><?php echo esc_html($bIdentity->getApiVersion() ?: 'N/A'); ?></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><?php esc_html_e('Backend Protocol', 'seo-opt-agent'); ?></th>
+                        <td id="seo-opt-protocol-version"><?php echo esc_html($bIdentity->getProtocolVersion() ?: 'N/A'); ?></td>
                     </tr>
                     <tr>
                         <th scope="row"><?php esc_html_e('Capabilities', 'seo-opt-agent'); ?></th>
-                        <td id="seo-opt-capabilities"><?php echo esc_html(implode(', ', $regData->getCapabilities()) ?: 'None'); ?></td>
+                        <td id="seo-opt-capabilities"><?php echo esc_html(implode(', ', $bIdentity->getCapabilities()) ?: 'None'); ?></td>
                     </tr>
                     <tr>
                         <th scope="row"><?php esc_html_e('Last Error', 'seo-opt-agent'); ?></th>
@@ -161,13 +177,15 @@ class SettingsPage {
     }
 
     private function respondWithResult($result) {
-        $regData = $this->config->getRegistrationData();
+        $bIdentity = $this->config->getBackendIdentity();
         $response = [
             'message' => $result->getMessage(),
-            'status' => $result->getStatus()->getLabel(),
-            'backend_version' => $regData->getBackendVersion() ?: 'N/A',
-            'api_version' => $regData->getApiVersion() ?: 'N/A',
-            'capabilities' => implode(', ', $regData->getCapabilities()) ?: 'None',
+            'status' => $result->getConnectionStatus()->getLabel(),
+            'reg_status' => $result->getRegistrationStatus()->getLabel(),
+            'backend_version' => $bIdentity->getBackendVersion() ?: 'N/A',
+            'api_version' => $bIdentity->getApiVersion() ?: 'N/A',
+            'protocol_version' => $bIdentity->getProtocolVersion() ?: 'N/A',
+            'capabilities' => implode(', ', $bIdentity->getCapabilities()) ?: 'None',
             'last_error' => $this->config->getLastConnectionError()
         ];
 

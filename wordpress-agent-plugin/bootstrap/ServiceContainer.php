@@ -6,20 +6,24 @@ use SeoOptAgent\Admin\Notices;
 use SeoOptAgent\Api\HttpClient;
 use SeoOptAgent\Api\BackendClient;
 use SeoOptAgent\Repository\SettingsRepository;
+use SeoOptAgent\Security\WordPressSecretStore;
 use SeoOptAgent\Services\ConfigService;
 use SeoOptAgent\Services\RegistrationService;
+use SeoOptAgent\Services\CompatibilityService;
 use SeoOptAgent\Utils\NullLogger;
 
 class ServiceContainer {
     public function registerServices(Loader $loader) {
         $logger = new NullLogger();
         $settingsRepo = new SettingsRepository();
-        $configService = new ConfigService($settingsRepo);
+        $secretStore = new WordPressSecretStore($settingsRepo);
+        $configService = new ConfigService($settingsRepo, $secretStore);
         
         $httpClient = new HttpClient();
         $backendClient = new BackendClient($httpClient, $configService);
         
-        $registrationService = new RegistrationService($backendClient, $configService, $logger);
+        $compatibilityService = new CompatibilityService();
+        $registrationService = new RegistrationService($backendClient, $configService, $logger, $compatibilityService);
         
         $notices = new Notices();
 

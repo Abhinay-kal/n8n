@@ -13,8 +13,10 @@ jQuery(document).ready(function($) {
             $('#seo-opt-notices-container').html(html);
             
             $('#seo-opt-status-text').text(response.data.status);
+            $('#seo-opt-reg-text').text(response.data.reg_status);
             $('#seo-opt-backend-version').text(response.data.backend_version);
             $('#seo-opt-api-version').text(response.data.api_version);
+            $('#seo-opt-protocol-version').text(response.data.protocol_version);
             $('#seo-opt-capabilities').text(response.data.capabilities);
             
             if (response.success) {

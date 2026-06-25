@@ -2,16 +2,20 @@
 namespace SeoOptAgent\Services;
 
 use SeoOptAgent\Repository\SettingsRepository;
+use SeoOptAgent\Security\SecretStoreInterface;
 use SeoOptAgent\Models\ConnectionStatus;
+use SeoOptAgent\Models\RegistrationStatus;
 use SeoOptAgent\Models\PluginIdentity;
-use SeoOptAgent\Models\RegistrationData;
+use SeoOptAgent\Models\BackendIdentity;
 
 class ConfigService {
     private $repo;
+    private $secretStore;
     private $cache;
 
-    public function __construct(SettingsRepository $repo) {
+    public function __construct(SettingsRepository $repo, SecretStoreInterface $secretStore) {
         $this->repo = $repo;
+        $this->secretStore = $secretStore;
         $this->cache = $this->repo->getSettings();
     }
 
@@ -28,22 +32,41 @@ class ConfigService {
         return rtrim($this->cache['backend_url'] ?? '', '/');
     }
 
+    // Secrets are now handled by SecretStore
     public function getApiKey(): string {
-        return $this->cache['api_key'] ?? '';
+        return $this->secretStore->getSecret('api_key');
+    }
+
+    public function setApiKey(string $key): void {
+        $this->secretStore->setSecret('api_key', $key);
     }
     
     public function getRegistrationToken(): string {
-        $regData = $this->getRegistrationData();
-        return $regData->getRegistrationToken();
+        return $this->secretStore->getSecret('registration_token');
+    }
+
+    public function setRegistrationToken(string $token): void {
+        $this->secretStore->setSecret('registration_token', $token);
+    }
+
+    public function clearRegistrationToken(): void {
+        $this->secretStore->deleteSecret('registration_token');
     }
 
     public function getConnectionStatus(): ConnectionStatus {
-        $val = $this->cache['connection_status'] ?? ConnectionStatus::NOT_CONFIGURED;
-        return new ConnectionStatus($val);
+        return new ConnectionStatus($this->cache['connection_status'] ?? ConnectionStatus::NOT_CONFIGURED);
     }
 
     public function setConnectionStatus(ConnectionStatus $status): void {
         $this->save('connection_status', $status->getValue());
+    }
+
+    public function getRegistrationStatus(): RegistrationStatus {
+        return new RegistrationStatus($this->cache['registration_status'] ?? RegistrationStatus::UNREGISTERED);
+    }
+
+    public function setRegistrationStatus(RegistrationStatus $status): void {
+        $this->save('registration_status', $status->getValue());
     }
 
     public function getLastConnectionError(): string {
@@ -59,14 +82,28 @@ class ConfigService {
     }
 
     public function updateIdentity(PluginIdentity $identity): void {
-        $this->save('identity', $identity->toArray());
+        // Validation: never overwrite existing UUIDs
+        $existing = $this->getIdentity();
+        $data = $identity->toArray();
+        
+        if (!empty($existing->getPluginUuid())) {
+            $data['pluginUuid'] = $existing->getPluginUuid();
+        }
+        if (!empty($existing->getInstallationUuid())) {
+            $data['installationUuid'] = $existing->getInstallationUuid();
+        }
+        if (!empty($existing->getGeneratedAt())) {
+            $data['generatedAt'] = $existing->getGeneratedAt();
+        }
+        
+        $this->save('identity', $data);
     }
 
-    public function getRegistrationData(): RegistrationData {
-        return new RegistrationData($this->cache['registration'] ?? []);
+    public function getBackendIdentity(): BackendIdentity {
+        return new BackendIdentity($this->cache['backend_identity'] ?? []);
     }
 
-    public function updateRegistrationData(RegistrationData $data): void {
-        $this->save('registration', $data->toArray());
+    public function updateBackendIdentity(BackendIdentity $identity): void {
+        $this->save('backend_identity', $identity->toArray());
     }
 }\n
