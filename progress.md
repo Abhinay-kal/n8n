@@ -1,11 +1,29 @@
-# Tracking Progress with Antigravity CLI
+# [Project Name] - Progress Tracker
 
-The `antigravity` CLI includes built-in commands to seamlessly manage your `progress.md` file without having to leave the terminal. This keeps your project tracking consistent, formatted, and up to date.
+> **Objective:** [Write a 1-2 sentence description of the project's ultimate goal]
 
-## 🚀 Getting Started
+## 📊 Current Status
+* **Phase:** [e.g., Planning, Active Development, Testing, Nearing Completion]
+* **Last Updated:** [Date]
 
-If you are starting a new project or want to begin tracking an existing one, initialize the progress file:
+## 🚧 Blockers & Issues
+* [ ] [Describe any current issue preventing progress]
+* [ ] [e.g., Waiting on API access from the IT team]
 
-```bash
-antigravity progress init
-```
+## 🎯 Immediate To-Do (Next Up)
+* [ ] [High priority task 1]
+* [ ] [High priority task 2]
+* [ ] [High priority task 3]
+
+---
+
+## 📅 Progress Log
+
+### [YYYY-MM-DD]
+* **Completed:** [What did you finish today?]
+* **Fixed:** [Did you resolve any bugs or issues?]
+* **Notes:** [Any context, decisions made, or random ideas for the future]
+
+### [YYYY-MM-DD]
+* **Completed:** Set up the initial project repository and directory structure.
+* **Completed:** Created `README.md` and `progress.md`.
