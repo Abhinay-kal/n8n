@@ -1,90 +1,112 @@
 # Claude Worker Foundation
 
-Reliable Playwright + Express worker for Claude Web UI automation.
+A reliable, scalable Playwright + Express worker designed for automating the Claude Web UI. This project provides a robust foundation for executing serialized prompts, managing browser sessions, and handling persistent jobs with sophisticated error recovery.
 
-## Structure
+## 🌟 Overview
 
-- `src/server.js` - application bootstrap
-- `src/services/BrowserManager.js` - persistent browser/context/page lifecycle
-- `src/services/SessionMonitor.js` - session health checks and recovery status
-- `src/services/ClaudeWorker.js` - serialized prompt execution and response extraction
-- `src/routes/rewrite.js` - `POST /rewrite`
-- `src/routes/health.js` - `GET /health`
-- `src/routes/status.js` - `GET /status`
-- `src/state/workerState.js` - explicit worker state machine
-- `src/config/config.js` - environment-driven config
+The Claude Worker Foundation is built to reliably automate interactions with the Claude web interface. It abstracts away the complexities of browser lifecycle management, session health monitoring, and stateful job processing.
 
-## Run
+### Key Features
+* **Resilient Browser Management**: Automatically handles browser crashes, zombie processes, and session lock-ups.
+* **Stateful Job Tracking**: Uses a persistent SQLite database (with an easy migration path to PostgreSQL) to ensure no tasks are lost.
+* **Intelligent Error Recovery**: Built-in state machine that automatically retries processing upon transient failures.
+* **Express API Interface**: Provides simple REST endpoints to interact with the worker and check system health.
+
+## 🏛 Architecture
+
+The following diagram illustrates the core components and their relationships based on the project's internal structure:
+
+```mermaid
+classDiagram
+    class BootstrapManager {
+        +initialize()
+    }
+    class BrowserManager {
+        +restart()
+        +validateSession()
+    }
+    class ClaudeManager {
+        +processPrompt()
+    }
+    class ClaudeWorker {
+        +submitPrompt()
+        +extractResponse()
+    }
+    class PersistentWorkerState {
+        +getState()
+        +setState()
+        +incrementRecoveryAttempts()
+    }
+    class ContentProject {
+        +status
+    }
+    class FailureClassifier {
+        +classifyError()
+    }
+
+    BootstrapManager --> ClaudeManager : Bootstraps
+    ClaudeManager --> ClaudeWorker : Delegates Work
+    ClaudeManager --> PersistentWorkerState : Tracks Status
+    ClaudeWorker --> BrowserManager : Requires Browser Context
+    ClaudeWorker --> ContentProject : Updates Project Status
+    ClaudeWorker ..> FailureClassifier : Uses for Error Handling
+```
+
+## 📂 Project Structure
+
+- `src/server.js` - Application bootstrap and Express server setup.
+- `src/bootstrap/BootstrapManager.js` - Coordinates initialization of services.
+- `src/services/BrowserManager.js` - Persistent browser, context, and page lifecycle management using Playwright.
+- `src/services/ClaudeWorker.js` - Serialized prompt execution and response extraction logic.
+- `src/services/ClaudeManager.js` - Higher-level orchestration of Claude interactions.
+- `src/models/WorkerState.js` - Explicit worker state machine (`PersistentWorkerState`) to track recovery.
+- `src/models/ContentProject.js` - Job modeling and tracking statuses.
+- `src/errors/ClaudeErrors.js` - Custom error types (e.g., `BrowserError`, `ProfileLockError`, `InvalidResponseQualityError`).
+- `src/utils/FailureClassifier.js` - Intelligent classification of errors for recovery logic.
+
+## 🚀 Getting Started
+
+### Installation
 
 ```bash
 npm install
-npm start
 ```
 
-## Endpoints
+### Running the Server
 
 ```bash
+npm start
+```
+*(Or use `npm run legacy-start` for the legacy `server.js` entry point)*
+
+### API Endpoints
+
+Check system health and status:
+```bash
 curl http://localhost:3000/health
-
 curl http://localhost:3000/status
+```
 
+Submit a prompt for processing:
+```bash
 curl -X POST http://localhost:3000/rewrite \
   -H 'Content-Type: application/json' \
   -d '{"prompt":"Say hello"}'
 ```
 
-## Recovery Flow
+## 🔄 Recovery Flow
 
-```mermaid
-flowchart TD
-  A[Request arrives] --> B[Queue serializes request]
-  B --> C[BrowserManager validates browser/page]
-  C -->|healthy| D[SessionMonitor checks session]
-  C -->|unhealthy| R[BrowserManager.restart]
-  D -->|healthy| E[ClaudeWorker submits prompt]
-  D -->|degraded/broken| R
-  R --> C
-  E --> F[Wait for stable response]
-  F --> G[Return JSON response]
-```
+The system is designed with a fault-tolerant recovery flow:
+1. **Request Reception**: Request arrives and is serialized in the queue.
+2. **Validation**: `BrowserManager` validates the browser and page health.
+3. **Execution**: If healthy, `ClaudeWorker` submits the prompt.
+4. **Failure Handling**: If a failure occurs, `FailureClassifier` determines the root cause. The `PersistentWorkerState` tracks recovery attempts.
+5. **Recovery**: If a session is broken, `BrowserManager` automatically restarts the session, and the job is retried until success or permanent failure.
 
-## Persistent Job System
+## 🧪 Testing
 
-The system includes a durable job tracking layer using SQLite to ensure that WordPress articles are processed exactly once and survive worker restarts.
-
-### Schema (SQLite)
-
-- `id`: INTEGER PRIMARY KEY AUTOINCREMENT
-- `wp_post_id`: INTEGER UNIQUE (Duplicate prevention)
-- `prompt`: TEXT (The content to process)
-- `status`: TEXT (`pending`, `processing`, `completed`, `failed`)
-- `created_at`: DATETIME
-- `updated_at`: DATETIME
-- `error`: TEXT (Stores error message if failed)
-
-### Job Lifecycle
-
-1. **Pending**: New job created via `POST /rewrite` with `wp_post_id`.
-2. **Processing**: Background worker picks up the job and starts Claude automation.
-3. **Completed**: Successfully processed article.
-4. **Failed**: Error occurred during processing.
-5. **Recovery**: On server startup, all `processing` jobs are reset to `pending` and retried.
-
-### PostgreSQL Migration Path
-
-To migrate from SQLite to PostgreSQL:
-
-1. **Update Connection**: Replace `better-sqlite3` with `pg` (or `knex` for easier query building).
-2. **Repository Pattern**: The `JobRepository` already uses parameterized SQL. Most SQLite syntax is compatible with PG.
-3. **Schema Adjustment**:
-   - Change `INTEGER PRIMARY KEY AUTOINCREMENT` to `SERIAL PRIMARY KEY`.
-   - Ensure `DATETIME` is `TIMESTAMP WITH TIME ZONE`.
-4. **Implementation**: Update `src/db/database.js` to use a PG pool.
-
-### Testing
-
-Run the job system test suite:
+Run the job system and validation test suite using Playwright and Jest:
 
 ```bash
-npx jest tests/job_system.test.js
+npm test
 ```
