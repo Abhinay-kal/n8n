@@ -1,6 +1,0 @@
-2026/01/13-11:57:45.503 2cf2 Creating DB /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_joinsuperset.com_0.indexeddb.leveldb since it was missing.
-2026/01/13-11:57:45.504 2cf2 Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_joinsuperset.com_0.indexeddb.leveldb/MANIFEST-000001
-2026/01/13-11:57:49.667 2c88 Level-0 table #5: started
-2026/01/13-11:57:49.667 2c88 Level-0 table #5: 1723 bytes OK
-2026/01/13-11:57:49.673 2c88 Delete type=0 #3
-2026/01/13-11:57:49.673 2c88 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

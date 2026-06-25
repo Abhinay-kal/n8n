@@ -1,6 +1,0 @@
-2026/03/25-23:38:26.878 caa0c9 Creating DB /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_www.scaler.com_0.indexeddb.leveldb since it was missing.
-2026/03/25-23:38:26.880 caa0c9 Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_www.scaler.com_0.indexeddb.leveldb/MANIFEST-000001
-2026/03/25-23:38:31.604 caa0c9 Level-0 table #5: started
-2026/03/25-23:38:31.605 caa0c9 Level-0 table #5: 1235 bytes OK
-2026/03/25-23:38:31.607 caa0c9 Delete type=0 #3
-2026/03/25-23:38:31.607 caa0c9 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

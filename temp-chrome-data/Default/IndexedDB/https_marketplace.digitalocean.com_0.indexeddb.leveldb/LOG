@@ -1,6 +1,0 @@
-2026/06/02-15:30:18.403 d8cc77 Creating DB /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_marketplace.digitalocean.com_0.indexeddb.leveldb since it was missing.
-2026/06/02-15:30:18.407 d8cc77 Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_marketplace.digitalocean.com_0.indexeddb.leveldb/MANIFEST-000001
-2026/06/03-10:14:45.663 d8cc79 Level-0 table #5: started
-2026/06/03-10:14:45.665 d8cc79 Level-0 table #5: 4225 bytes OK
-2026/06/03-10:14:45.668 d8cc79 Delete type=0 #3
-2026/06/03-10:14:45.669 d8cc79 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

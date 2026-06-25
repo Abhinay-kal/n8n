@@ -1,6 +1,0 @@
-2026/05/27-11:14:35.709 132691 Creating DB /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_www.apollo.io_0.indexeddb.leveldb since it was missing.
-2026/05/27-11:14:35.713 132691 Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_www.apollo.io_0.indexeddb.leveldb/MANIFEST-000001
-2026/05/27-11:14:38.197 13268d Level-0 table #5: started
-2026/05/27-11:14:38.199 13268d Level-0 table #5: 1240 bytes OK
-2026/05/27-11:14:38.202 13268d Delete type=0 #3
-2026/05/27-11:14:38.202 13268d Manual compaction at level-0 from (begin) .. (end); will stop at (end)

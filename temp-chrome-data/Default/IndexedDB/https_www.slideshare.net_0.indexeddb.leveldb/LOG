@@ -1,6 +1,0 @@
-2026/04/29-18:53:00.804 26cff16 Creating DB /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_www.slideshare.net_0.indexeddb.leveldb since it was missing.
-2026/04/29-18:53:00.806 26cff16 Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_www.slideshare.net_0.indexeddb.leveldb/MANIFEST-000001
-2026/04/29-18:54:12.984 26cff19 Level-0 table #5: started
-2026/04/29-18:54:12.986 26cff19 Level-0 table #5: 1567 bytes OK
-2026/04/29-18:54:12.993 26cff19 Delete type=0 #3
-2026/04/29-18:54:12.994 26cff19 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

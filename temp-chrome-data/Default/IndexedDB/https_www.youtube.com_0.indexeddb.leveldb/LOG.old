@@ -1,5 +1,0 @@
-2026/06/03-10:29:10.899 d8cc77 Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/MANIFEST-000001
-2026/06/03-10:29:10.900 d8cc77 Recovering log #414
-2026/06/03-10:29:10.901 d8cc77 Reusing old log /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/000414.log 
-2026/06/03-10:29:44.269 d8cc77 Compacting 1@1 + 1@2 files
-2026/06/03-10:29:44.274 d8cc77 compacted to: files[ 0 1 1 0 0 0 0 ]

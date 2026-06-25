@@ -1,6 +1,0 @@
-2025/12/08-01:44:14.845 9b9480 Creating DB /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_novelbin.com_0.indexeddb.leveldb since it was missing.
-2025/12/08-01:44:14.850 9b9480 Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_novelbin.com_0.indexeddb.leveldb/MANIFEST-000001
-2025/12/09-16:06:06.172 9b947f Level-0 table #5: started
-2025/12/09-16:06:06.173 9b947f Level-0 table #5: 1031 bytes OK
-2025/12/09-16:06:06.176 9b947f Delete type=0 #3
-2025/12/09-16:06:06.177 9b947f Manual compaction at level-0 from (begin) .. (end); will stop at (end)

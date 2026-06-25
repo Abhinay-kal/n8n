@@ -1,6 +1,0 @@
-2026/01/20-01:50:25.252 69279a Creating DB /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_www.primevideo.com_0.indexeddb.leveldb since it was missing.
-2026/01/20-01:50:25.257 69279a Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_www.primevideo.com_0.indexeddb.leveldb/MANIFEST-000001
-2026/01/20-01:52:36.632 69279a Level-0 table #5: started
-2026/01/20-01:52:36.637 69279a Level-0 table #5: 70421 bytes OK
-2026/01/20-01:52:36.639 69279a Delete type=0 #3
-2026/01/20-01:52:36.640 69279a Manual compaction at level-0 from (begin) .. (end); will stop at (end)

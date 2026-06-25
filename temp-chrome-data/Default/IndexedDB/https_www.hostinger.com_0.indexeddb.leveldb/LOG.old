@@ -1,6 +1,0 @@
-2026/05/22-11:47:27.791 325075a Creating DB /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_www.hostinger.com_0.indexeddb.leveldb since it was missing.
-2026/05/22-11:47:27.794 325075a Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_www.hostinger.com_0.indexeddb.leveldb/MANIFEST-000001
-2026/05/22-12:27:09.775 3250748 Level-0 table #5: started
-2026/05/22-12:27:09.777 3250748 Level-0 table #5: 2998 bytes OK
-2026/05/22-12:27:09.778 3250748 Delete type=0 #3
-2026/05/22-12:27:09.780 3250748 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

@@ -1,0 +1,1040 @@
+{
+  "communities": {
+    "0": [
+      "api_auditroutes",
+      "api_auditroutes_createauditroutes",
+      "api_auditroutes_express",
+      "api_jobroutes",
+      "api_jobroutes_createjobroutes",
+      "api_jobroutes_express",
+      "api_projectroutes",
+      "api_projectroutes_createprojectroutes",
+      "api_projectroutes_express",
+      "api_publishingroutes",
+      "api_publishingroutes_createpublishingroutes",
+      "api_publishingroutes_express",
+      "api_rewriteroutes",
+      "api_rewriteroutes_createrewriteroutes",
+      "api_rewriteroutes_express",
+      "api_siteroutes",
+      "api_siteroutes_createsiteroutes",
+      "api_siteroutes_express",
+      "api_statusroutes",
+      "api_statusroutes_createstatusroutes",
+      "api_statusroutes_express",
+      "api_wordpressroutes",
+      "api_wordpressroutes_createwordpressroutes",
+      "api_wordpressroutes_express",
+      "middleware_auth",
+      "middleware_auth_createauthmiddleware",
+      "middleware_auth_crypto",
+      "middleware_ratelimiter",
+      "middleware_ratelimiter_createratelimiter",
+      "middleware_secureheaders",
+      "middleware_secureheaders_secureheaders",
+      "middleware_validation",
+      "middleware_validation_validaterewriterequest",
+      "routes_queue",
+      "routes_queue_createqueuerouter",
+      "routes_queue_express",
+      "src_index",
+      "src_index_bootstrapmanager",
+      "src_index_createapp",
+      "src_index_main",
+      "src_server",
+      "src_server_createapp",
+      "src_server_createauditroutes",
+      "src_server_createauthmiddleware",
+      "src_server_createjobroutes",
+      "src_server_createprojectroutes",
+      "src_server_createpublishingroutes",
+      "src_server_createqueuerouter",
+      "src_server_createratelimiter",
+      "src_server_createrewriteroutes",
+      "src_server_createsiteroutes",
+      "src_server_createstatusroutes",
+      "src_server_createwordpressroutes",
+      "src_server_express",
+      "src_server_loadsecurityconfig",
+      "src_server_secureheaders",
+      "src_server_validaterewriterequest"
+    ],
+    "1": [
+      "errors_claudeerrors",
+      "errors_claudeerrors_browsererror",
+      "errors_claudeerrors_browsererror_constructor",
+      "errors_claudeerrors_claudeerror",
+      "errors_claudeerrors_claudeerror_constructor",
+      "errors_claudeerrors_contentunavailableerror",
+      "errors_claudeerrors_contentunavailableerror_constructor",
+      "errors_claudeerrors_invalidprojectcontenterror",
+      "errors_claudeerrors_invalidprojectcontenterror_constructor",
+      "errors_claudeerrors_invalidresponsequalityerror",
+      "errors_claudeerrors_invalidresponsequalityerror_constructor",
+      "errors_claudeerrors_profilelockerror",
+      "errors_claudeerrors_profilelockerror_constructor",
+      "errors_claudeerrors_recoveryreport",
+      "errors_claudeerrors_recoveryreport_constructor",
+      "errors_claudeerrors_validationerror",
+      "errors_claudeerrors_validationerror_constructor",
+      "models_workerstate",
+      "models_workerstate_worker_states",
+      "services_browsermanager",
+      "services_browsermanager_browsererror_profilelockerror",
+      "services_browsermanager_chromium",
+      "services_browsermanager_worker_states",
+      "services_claudemanager",
+      "services_claudemanager_fs",
+      "services_claudemanager_path",
+      "services_claudemanager_selectors",
+      "services_claudemanager_validationerror_recoveryreport_invalidprojectcontenterror_invalidresponsequalityerror_createclaudeerror_normalizeerror",
+      "services_claudemanager_worker_states",
+      "services_claudeworker",
+      "services_claudeworker_auditpromptbuilder",
+      "services_claudeworker_contentunavailableerror_invalidprojectcontenterror",
+      "services_claudeworker_failureclassifier",
+      "services_claudeworker_fs",
+      "services_claudeworker_path",
+      "services_claudeworker_project_statuses",
+      "services_claudeworker_rewritepromptbuilder",
+      "services_claudeworker_worker_states",
+      "tests_validation_test",
+      "tests_validation_test_claudemanager",
+      "tests_validation_test_validationerror",
+      "utils_auditpromptbuilder",
+      "utils_auditpromptbuilder_auditpromptbuilder",
+      "utils_auditpromptbuilder_auditpromptbuilder_build",
+      "utils_failureclassifier",
+      "utils_failureclassifier_failure_categories",
+      "utils_failureclassifier_failureclassifier",
+      "utils_failureclassifier_failureclassifier_classify",
+      "utils_rewritepromptbuilder",
+      "utils_rewritepromptbuilder_rewritepromptbuilder",
+      "utils_rewritepromptbuilder_rewritepromptbuilder_build"
+    ],
+    "2": [
+      "db_migrations",
+      "db_migrations_migrations",
+      "db_migrations_migrations_constructor",
+      "db_migrations_migrations_run",
+      "models_contentproject",
+      "models_contentproject_contentproject",
+      "models_contentproject_contentproject_constructor",
+      "models_contentproject_contentproject_isvalidtransition",
+      "models_contentproject_project_statuses",
+      "models_contentproject_valid_project_transitions",
+      "repositories_projectrepository",
+      "repositories_projectrepository_contentproject_project_statuses",
+      "services_jobservice",
+      "services_jobservice_project_statuses",
+      "services_projectservice",
+      "services_projectservice_auditparser",
+      "services_projectservice_difftracker",
+      "services_projectservice_project_statuses",
+      "services_publishingservice",
+      "services_publishingservice_project_statuses",
+      "services_publishingservice_publishingservice",
+      "services_publishingservice_publishingservice_constructor",
+      "services_publishingservice_publishingservice_getpublishinghistory",
+      "services_publishingservice_publishingservice_publishtowordpress",
+      "services_publishingservice_wordpressclient",
+      "tests_stabilization_test",
+      "tests_stabilization_test_databaseconnection",
+      "tests_stabilization_test_fs",
+      "tests_stabilization_test_jobrepository",
+      "tests_stabilization_test_jobservice",
+      "tests_stabilization_test_migrations",
+      "tests_stabilization_test_path",
+      "tests_stabilization_test_project_statuses",
+      "tests_stabilization_test_projectrepository",
+      "tests_stabilization_test_projectservice",
+      "tests_stabilization_test_siterepository",
+      "utils_auditparser",
+      "utils_auditparser_auditparser",
+      "utils_auditparser_auditparser_extractlist",
+      "utils_auditparser_auditparser_extractscore",
+      "utils_auditparser_auditparser_parse",
+      "utils_difftracker",
+      "utils_difftracker_difftracker",
+      "utils_difftracker_difftracker_calculate",
+      "utils_difftracker_difftracker_getwords"
+    ],
+    "3": [
+      "bootstrap_bootstrapmanager_bootstrapmanager_constructor",
+      "models_workerstate_persistentworkerstate",
+      "models_workerstate_persistentworkerstate_constructor",
+      "models_workerstate_persistentworkerstate_getsnapshot",
+      "models_workerstate_persistentworkerstate_getstate",
+      "models_workerstate_persistentworkerstate_incrementrecoveryattempts",
+      "models_workerstate_persistentworkerstate_loadinitialstate",
+      "models_workerstate_persistentworkerstate_resetrecoveryattempts",
+      "models_workerstate_persistentworkerstate_setstate",
+      "scripts_claude",
+      "scripts_claude_browsermanager",
+      "scripts_claude_claudeworker",
+      "scripts_claude_createlogger",
+      "scripts_claude_getsingletonworker",
+      "scripts_claude_loadconfig",
+      "scripts_claude_persistentworkerstate_workerstate",
+      "scripts_claude_runclaude",
+      "scripts_claude_sessionmonitor",
+      "services_claudeworker_claudeworker",
+      "services_claudeworker_claudeworker_constructor",
+      "services_claudeworker_claudeworker_executejob",
+      "services_claudeworker_claudeworker_getqueuesize",
+      "services_claudeworker_claudeworker_getstatussnapshot",
+      "services_claudeworker_claudeworker_initialize",
+      "services_claudeworker_claudeworker_ishealthy",
+      "services_claudeworker_claudeworker_processpendingjobs",
+      "services_claudeworker_claudeworker_recordjobchat",
+      "services_claudeworker_claudeworker_resetworkerstate",
+      "services_claudeworker_claudeworker_rewrite",
+      "services_claudeworker_claudeworker_saveresponse",
+      "services_claudeworker_claudeworker_startprocessing",
+      "services_claudeworker_claudeworker_stopprocessing",
+      "utils_logger",
+      "utils_logger_createlogger",
+      "utils_logger_normalizepayload",
+      "utils_logger_redact",
+      "utils_logger_sensitive_keys",
+      "utils_logger_write"
+    ],
+    "4": [
+      "errors_claudeerrors_createclaudeerror",
+      "errors_claudeerrors_normalizeerror",
+      "services_claudemanager_claudemanager",
+      "services_claudemanager_claudemanager_attemptsubmit",
+      "services_claudemanager_claudemanager_capturediagnostics",
+      "services_claudemanager_claudemanager_constructor",
+      "services_claudemanager_claudemanager_containsmeaningfulcontent",
+      "services_claudemanager_claudemanager_detectcompletion",
+      "services_claudemanager_claudemanager_detecterrors",
+      "services_claudemanager_claudemanager_ensureclaudehome",
+      "services_claudemanager_claudemanager_ensurehealthy",
+      "services_claudemanager_claudemanager_extractchatid",
+      "services_claudemanager_claudemanager_findfirstavailable",
+      "services_claudemanager_claudemanager_focusandclearinput",
+      "services_claudemanager_claudemanager_getlatestassistantcontent",
+      "services_claudemanager_claudemanager_getlatestassistanttext",
+      "services_claudemanager_claudemanager_getpagesnapshot",
+      "services_claudemanager_claudemanager_getstatus",
+      "services_claudemanager_claudemanager_initialize",
+      "services_claudemanager_claudemanager_isinputready",
+      "services_claudemanager_claudemanager_isretryable",
+      "services_claudemanager_claudemanager_readinputvalue",
+      "services_claudemanager_claudemanager_readresponsestate",
+      "services_claudemanager_claudemanager_recover",
+      "services_claudemanager_claudemanager_retry",
+      "services_claudemanager_claudemanager_selectors_match",
+      "services_claudemanager_claudemanager_sendprompt",
+      "services_claudemanager_claudemanager_sendpromptonce",
+      "services_claudemanager_claudemanager_sleep",
+      "services_claudemanager_claudemanager_submissionstarted",
+      "services_claudemanager_claudemanager_validateresponse",
+      "services_claudemanager_claudemanager_waitforresponse"
+    ],
+    "5": [
+      "bootstrap_bootstrapmanager",
+      "bootstrap_bootstrapmanager_browsermanager",
+      "bootstrap_bootstrapmanager_browserrecovery",
+      "bootstrap_bootstrapmanager_claudehealthcheck",
+      "bootstrap_bootstrapmanager_claudemanager",
+      "bootstrap_bootstrapmanager_claudeworker",
+      "bootstrap_bootstrapmanager_createlogger",
+      "bootstrap_bootstrapmanager_dashboardservice",
+      "bootstrap_bootstrapmanager_databaseconnection",
+      "bootstrap_bootstrapmanager_jobrepository",
+      "bootstrap_bootstrapmanager_jobservice",
+      "bootstrap_bootstrapmanager_loadconfig",
+      "bootstrap_bootstrapmanager_logrepository_eventrepository",
+      "bootstrap_bootstrapmanager_metricsservice",
+      "bootstrap_bootstrapmanager_migrations",
+      "bootstrap_bootstrapmanager_preflightvalidator",
+      "bootstrap_bootstrapmanager_projectrepository",
+      "bootstrap_bootstrapmanager_projectservice",
+      "bootstrap_bootstrapmanager_publishingrepository",
+      "bootstrap_bootstrapmanager_publishingservice",
+      "bootstrap_bootstrapmanager_queueservice",
+      "bootstrap_bootstrapmanager_recoverymanager",
+      "bootstrap_bootstrapmanager_sessiondetector",
+      "bootstrap_bootstrapmanager_sessionmonitor",
+      "bootstrap_bootstrapmanager_sessionrecovery",
+      "bootstrap_bootstrapmanager_siterepository",
+      "bootstrap_bootstrapmanager_siteservice",
+      "bootstrap_bootstrapmanager_statemachine",
+      "bootstrap_bootstrapmanager_syncservice",
+      "bootstrap_bootstrapmanager_wordpressrepository"
+    ],
+    "6": [
+      "bootstrap_bootstrapmanager_bootstrapmanager",
+      "bootstrap_bootstrapmanager_bootstrapmanager_printheader",
+      "bootstrap_bootstrapmanager_bootstrapmanager_reportfailures",
+      "bootstrap_bootstrapmanager_bootstrapmanager_run",
+      "bootstrap_bootstrapmanager_bootstrapmanager_runphase1",
+      "bootstrap_bootstrapmanager_bootstrapmanager_runphase2",
+      "bootstrap_bootstrapmanager_bootstrapmanager_runphase3",
+      "bootstrap_bootstrapmanager_bootstrapmanager_runphase3_5",
+      "bootstrap_bootstrapmanager_bootstrapmanager_runphase4",
+      "bootstrap_bootstrapmanager_bootstrapmanager_verifyreadiness",
+      "config_config",
+      "config_config_fs",
+      "config_config_loadconfig",
+      "config_config_parseboolean",
+      "config_config_parseinteger",
+      "config_config_path",
+      "config_security",
+      "config_security_loadsecurityconfig",
+      "config_security_parseinteger",
+      "scripts_check_config",
+      "scripts_check_config_config",
+      "scripts_check_config_loadconfig"
+    ],
+    "7": [
+      "package",
+      "package_author",
+      "package_dependencies",
+      "package_dependencies_better_sqlite3",
+      "package_dependencies_dotenv",
+      "package_dependencies_express",
+      "package_dependencies_playwright",
+      "package_description",
+      "package_devdependencies",
+      "package_devdependencies_jest",
+      "package_devdependencies_playwright_test",
+      "package_devdependencies_types_node",
+      "package_keywords",
+      "package_license",
+      "package_main",
+      "package_name",
+      "package_scripts",
+      "package_scripts_legacy_start",
+      "package_scripts_start",
+      "package_scripts_test",
+      "package_type",
+      "package_version"
+    ],
+    "8": [
+      "services_syncservice",
+      "services_syncservice_syncservice",
+      "services_syncservice_syncservice_constructor",
+      "services_syncservice_syncservice_getauthorlocalid",
+      "services_syncservice_syncservice_syncsite",
+      "services_syncservice_syncservice_synctaxonomy",
+      "services_syncservice_syncservice_testconnection",
+      "services_syncservice_wordpressclient",
+      "services_wordpressclient",
+      "services_wordpressclient_wordpressclient",
+      "services_wordpressclient_wordpressclient_constructor",
+      "services_wordpressclient_wordpressclient_createdraft",
+      "services_wordpressclient_wordpressclient_creatependingreview",
+      "services_wordpressclient_wordpressclient_getauthors",
+      "services_wordpressclient_wordpressclient_getcategories",
+      "services_wordpressclient_wordpressclient_getheaders",
+      "services_wordpressclient_wordpressclient_getpages",
+      "services_wordpressclient_wordpressclient_getposts",
+      "services_wordpressclient_wordpressclient_gettags",
+      "services_wordpressclient_wordpressclient_request",
+      "services_wordpressclient_wordpressclient_testconnection",
+      "services_wordpressclient_wordpressclient_updatedraft"
+    ],
+    "9": [
+      "repositories_jobrepository",
+      "repositories_jobrepository_jobrepository",
+      "repositories_jobrepository_jobrepository_constructor",
+      "repositories_jobrepository_jobrepository_createjob",
+      "repositories_jobrepository_jobrepository_deletejob",
+      "repositories_jobrepository_jobrepository_getjobbyid",
+      "repositories_jobrepository_jobrepository_getjobsbyprojectid",
+      "repositories_jobrepository_jobrepository_getjobsbysiteid",
+      "repositories_jobrepository_jobrepository_getpendingjobs",
+      "repositories_jobrepository_jobrepository_getqueuestats",
+      "repositories_jobrepository_jobrepository_getqueuesummary",
+      "repositories_jobrepository_jobrepository_getsitequeue",
+      "repositories_jobrepository_jobrepository_markcompleted",
+      "repositories_jobrepository_jobrepository_markfailed",
+      "repositories_jobrepository_jobrepository_markprocessing",
+      "repositories_jobrepository_jobrepository_recoverprocessingjobs",
+      "repositories_jobrepository_jobrepository_updatestatus",
+      "repositories_jobrepository_jobrepository_updatetimestamp",
+      "repositories_jobrepository_jobrepository_validatestatus",
+      "repositories_jobrepository_valid_statuses"
+    ],
+    "10": [
+      "services_siteservice",
+      "services_siteservice_encryption",
+      "services_siteservice_siteservice",
+      "services_siteservice_siteservice_constructor",
+      "services_siteservice_siteservice_createsite",
+      "services_siteservice_siteservice_disablesite",
+      "services_siteservice_siteservice_getallsites",
+      "services_siteservice_siteservice_getdecryptedcredentials",
+      "services_siteservice_siteservice_getsite",
+      "services_siteservice_siteservice_getsitesettings",
+      "services_siteservice_siteservice_updatesite",
+      "services_siteservice_siteservice_updatesitesettings",
+      "utils_encryption",
+      "utils_encryption_crypto",
+      "utils_encryption_encryption",
+      "utils_encryption_encryption_constructor",
+      "utils_encryption_encryption_decrypt",
+      "utils_encryption_encryption_encrypt"
+    ],
+    "11": [
+      "models_site",
+      "models_site_site",
+      "models_site_site_constructor",
+      "models_site_site_tojson",
+      "repositories_siterepository",
+      "repositories_siterepository_site",
+      "repositories_siterepository_siterepository",
+      "repositories_siterepository_siterepository_constructor",
+      "repositories_siterepository_siterepository_createsite",
+      "repositories_siterepository_siterepository_deletesite",
+      "repositories_siterepository_siterepository_disablesite",
+      "repositories_siterepository_siterepository_getallsites",
+      "repositories_siterepository_siterepository_getsitebydomain",
+      "repositories_siterepository_siterepository_getsitebyid",
+      "repositories_siterepository_siterepository_getsitesettings",
+      "repositories_siterepository_siterepository_updatesite",
+      "repositories_siterepository_siterepository_updatesitesettings"
+    ],
+    "12": [
+      "repositories_projectrepository_projectrepository",
+      "repositories_projectrepository_projectrepository_constructor",
+      "repositories_projectrepository_projectrepository_createaudit",
+      "repositories_projectrepository_projectrepository_createproject",
+      "repositories_projectrepository_projectrepository_createrewrite",
+      "repositories_projectrepository_projectrepository_createversion",
+      "repositories_projectrepository_projectrepository_getauditbyid",
+      "repositories_projectrepository_projectrepository_getauditsbyprojectid",
+      "repositories_projectrepository_projectrepository_getlatestversion",
+      "repositories_projectrepository_projectrepository_getprojectbyid",
+      "repositories_projectrepository_projectrepository_getprojectbywppostid",
+      "repositories_projectrepository_projectrepository_getprojectsbystatus",
+      "repositories_projectrepository_projectrepository_getrewritebyid",
+      "repositories_projectrepository_projectrepository_getrewritesbyprojectid",
+      "repositories_projectrepository_projectrepository_getversionsbyprojectid",
+      "repositories_projectrepository_projectrepository_updatestatus"
+    ],
+    "13": [
+      "services_browsermanager_browsermanager",
+      "services_browsermanager_browsermanager_attachsinglepage",
+      "services_browsermanager_browsermanager_close",
+      "services_browsermanager_browsermanager_closeduplicatepages",
+      "services_browsermanager_browsermanager_constructor",
+      "services_browsermanager_browsermanager_getpage",
+      "services_browsermanager_browsermanager_initialize",
+      "services_browsermanager_browsermanager_initializeinternal",
+      "services_browsermanager_browsermanager_ishealthy",
+      "services_browsermanager_browsermanager_launchcontext",
+      "services_browsermanager_browsermanager_markpage",
+      "services_browsermanager_browsermanager_pages",
+      "services_browsermanager_browsermanager_restart",
+      "services_browsermanager_browsermanager_restartinternal",
+      "services_browsermanager_browsermanager_sleep"
+    ],
+    "14": [
+      "repositories_wordpressrepository",
+      "repositories_wordpressrepository_wordpressrepository",
+      "repositories_wordpressrepository_wordpressrepository_constructor",
+      "repositories_wordpressrepository_wordpressrepository_getauthorsbysiteid",
+      "repositories_wordpressrepository_wordpressrepository_getcategoriesbysiteid",
+      "repositories_wordpressrepository_wordpressrepository_getpostbywpid",
+      "repositories_wordpressrepository_wordpressrepository_getpostsbysiteid",
+      "repositories_wordpressrepository_wordpressrepository_gettagsbysiteid",
+      "repositories_wordpressrepository_wordpressrepository_startsyncrun",
+      "repositories_wordpressrepository_wordpressrepository_updatesyncrun",
+      "repositories_wordpressrepository_wordpressrepository_upsertauthor",
+      "repositories_wordpressrepository_wordpressrepository_upsertcategory",
+      "repositories_wordpressrepository_wordpressrepository_upsertpost",
+      "repositories_wordpressrepository_wordpressrepository_upserttag"
+    ],
+    "15": [
+      "services_jobservice_jobservice",
+      "services_jobservice_jobservice_completejob",
+      "services_jobservice_jobservice_constructor",
+      "services_jobservice_jobservice_createjob",
+      "services_jobservice_jobservice_failjob",
+      "services_jobservice_jobservice_getjobbyid",
+      "services_jobservice_jobservice_getjobsbysiteid",
+      "services_jobservice_jobservice_getpendingjobs",
+      "services_jobservice_jobservice_getqueuestats",
+      "services_jobservice_jobservice_getqueuesummary",
+      "services_jobservice_jobservice_getsitequeue",
+      "services_jobservice_jobservice_recoverinterruptedjobs",
+      "services_jobservice_jobservice_startjob"
+    ],
+    "16": [
+      "services_metricsservice",
+      "services_metricsservice_metricsservice",
+      "services_metricsservice_metricsservice_constructor",
+      "services_metricsservice_metricsservice_getsnapshot",
+      "services_metricsservice_metricsservice_recordincident",
+      "services_metricsservice_metricsservice_recordjobcompletion",
+      "services_metricsservice_metricsservice_recordjobfailure",
+      "services_metricsservice_metricsservice_recordrecovery",
+      "services_metricsservice_metricsservice_shutdown",
+      "services_metricsservice_metricsservice_start",
+      "services_metricsservice_metricsservice_stop",
+      "services_metricsservice_metricsservice_updatestate"
+    ],
+    "17": [
+      "bootstrap_preflightvalidator",
+      "bootstrap_preflightvalidator_fs",
+      "bootstrap_preflightvalidator_path",
+      "bootstrap_preflightvalidator_preflightvalidator",
+      "bootstrap_preflightvalidator_preflightvalidator_constructor",
+      "bootstrap_preflightvalidator_preflightvalidator_ensuredirectories",
+      "bootstrap_preflightvalidator_preflightvalidator_getactions",
+      "bootstrap_preflightvalidator_preflightvalidator_geterrors",
+      "bootstrap_preflightvalidator_preflightvalidator_validateconfig",
+      "bootstrap_preflightvalidator_preflightvalidator_validateenv",
+      "bootstrap_preflightvalidator_preflightvalidator_validateprofile"
+    ],
+    "18": [
+      "monitor_statemachine",
+      "monitor_statemachine_allowed_transitions",
+      "monitor_statemachine_statemachine",
+      "monitor_statemachine_statemachine_constructor",
+      "monitor_statemachine_statemachine_gethistory",
+      "monitor_statemachine_statemachine_getstate",
+      "monitor_statemachine_statemachine_persiststate",
+      "monitor_statemachine_statemachine_recordtransition",
+      "monitor_statemachine_statemachine_resettostarting",
+      "monitor_statemachine_statemachine_syncwithdatabase",
+      "monitor_statemachine_statemachine_transition"
+    ],
+    "19": [
+      "services_projectservice_projectservice",
+      "services_projectservice_projectservice_completeaudit",
+      "services_projectservice_projectservice_completerewrite",
+      "services_projectservice_projectservice_constructor",
+      "services_projectservice_projectservice_getlatestauditbyprojectid",
+      "services_projectservice_projectservice_getpostbyprojectid",
+      "services_projectservice_projectservice_getprojectdetails",
+      "services_projectservice_projectservice_getprojecthistory",
+      "services_projectservice_projectservice_reconcileprojectstates",
+      "services_projectservice_projectservice_recordevent",
+      "services_projectservice_projectservice_updateprojectstatus"
+    ],
+    "20": [
+      "repositories_logrepository",
+      "repositories_logrepository_eventrepository",
+      "repositories_logrepository_eventrepository_constructor",
+      "repositories_logrepository_eventrepository_createevent",
+      "repositories_logrepository_eventrepository_geteventsbyprojectid",
+      "repositories_logrepository_logrepository",
+      "repositories_logrepository_logrepository_constructor",
+      "repositories_logrepository_logrepository_createexecutionlog",
+      "repositories_logrepository_logrepository_getlogsbyjobid",
+      "repositories_logrepository_logrepository_getlogsbyprojectid"
+    ],
+    "21": [
+      "services_dashboardservice",
+      "services_dashboardservice_dashboardservice",
+      "services_dashboardservice_dashboardservice_calculatesuccessrate",
+      "services_dashboardservice_dashboardservice_check",
+      "services_dashboardservice_dashboardservice_colorizestate",
+      "services_dashboardservice_dashboardservice_constructor",
+      "services_dashboardservice_dashboardservice_draw",
+      "services_dashboardservice_dashboardservice_formatuptime",
+      "services_dashboardservice_dashboardservice_start",
+      "services_dashboardservice_dashboardservice_stop"
+    ],
+    "22": [
+      "db_database",
+      "db_database_database",
+      "db_database_databaseconnection",
+      "db_database_databaseconnection_close",
+      "db_database_databaseconnection_connect",
+      "db_database_databaseconnection_constructor",
+      "db_database_databaseconnection_get",
+      "db_database_fs",
+      "db_database_path"
+    ],
+    "23": [
+      "services_queueservice",
+      "services_queueservice_queueservice",
+      "services_queueservice_queueservice_add",
+      "services_queueservice_queueservice_constructor",
+      "services_queueservice_queueservice_drain",
+      "services_queueservice_queueservice_getnextjob",
+      "services_queueservice_queueservice_pause",
+      "services_queueservice_queueservice_resume",
+      "services_queueservice_queueservice_size"
+    ],
+    "24": [
+      "monitor_recoverymanager",
+      "monitor_recoverymanager_recoverymanager",
+      "monitor_recoverymanager_recoverymanager_constructor",
+      "monitor_recoverymanager_recoverymanager_executerecovery",
+      "monitor_recoverymanager_recoverymanager_recoverfromcaptcha",
+      "monitor_recoverymanager_recoverymanager_recoverfromnetwork",
+      "monitor_recoverymanager_recoverymanager_recoverfromratelimit",
+      "monitor_recoverymanager_recoverymanager_sleep"
+    ],
+    "25": [
+      "monitor_sessionmonitor",
+      "monitor_sessionmonitor_sessionmonitor",
+      "monitor_sessionmonitor_sessionmonitor_constructor",
+      "monitor_sessionmonitor_sessionmonitor_getstatus",
+      "monitor_sessionmonitor_sessionmonitor_runhealthcheck",
+      "monitor_sessionmonitor_sessionmonitor_start",
+      "monitor_sessionmonitor_sessionmonitor_stop"
+    ],
+    "26": [
+      "graphify_cli",
+      "graphify_mcp",
+      "graphify_output_directory",
+      "graphify_rules_graphify",
+      "graphify_skill_definition",
+      "graphify_workflows_graphify"
+    ],
+    "27": [
+      "repositories_publishingrepository",
+      "repositories_publishingrepository_publishingrepository",
+      "repositories_publishingrepository_publishingrepository_constructor",
+      "repositories_publishingrepository_publishingrepository_createpublisheddraft",
+      "repositories_publishingrepository_publishingrepository_getpublisheddraftbyid",
+      "repositories_publishingrepository_publishingrepository_getpublisheddraftsbyprojectid"
+    ],
+    "28": [
+      "scripts_add_job",
+      "scripts_add_job_addjob",
+      "scripts_add_job_database",
+      "scripts_add_job_db",
+      "scripts_add_job_fs",
+      "scripts_add_job_path"
+    ],
+    "29": [
+      "scripts_autonomous_run",
+      "scripts_autonomous_run_database",
+      "scripts_autonomous_run_fs",
+      "scripts_autonomous_run_path",
+      "scripts_autonomous_run_runpipeline",
+      "scripts_autonomous_run_spawn"
+    ],
+    "30": [
+      "scripts_inspect_dom",
+      "scripts_inspect_dom_chromium",
+      "scripts_inspect_dom_fs",
+      "scripts_inspect_dom_main",
+      "scripts_inspect_dom_path",
+      "scripts_inspect_dom_selectors"
+    ],
+    "31": [
+      "session_sessionrecovery",
+      "session_sessionrecovery_sessionrecovery",
+      "session_sessionrecovery_sessionrecovery_constructor",
+      "session_sessionrecovery_sessionrecovery_isloggedin",
+      "session_sessionrecovery_sessionrecovery_recoverfromlogout",
+      "session_sessionrecovery_sessionrecovery_sleep"
+    ],
+    "32": [
+      "deploymentcommands_deployment_commands",
+      "deploymentstaging_staging_deployment",
+      "productionlaunchchecklist_checklist",
+      "readme_claude_worker_foundation",
+      "soaktestplan_soak_test_plan"
+    ],
+    "33": [
+      "failure1780489233782_junior_engineer",
+      "failure1780489233782_ownership_influence",
+      "failure1780489233782_problem_solving",
+      "failure1780489233782_scope_of_thinking",
+      "failure1780489233782_senior_engineer"
+    ],
+    "34": [
+      "scripts_debug_claude_v2",
+      "scripts_debug_claude_v2_chromium",
+      "scripts_debug_claude_v2_debugclaude",
+      "scripts_debug_claude_v2_fs",
+      "scripts_debug_claude_v2_path"
+    ],
+    "35": [
+      "scripts_inspect_chat",
+      "scripts_inspect_chat_chromium",
+      "scripts_inspect_chat_fs",
+      "scripts_inspect_chat_main",
+      "scripts_inspect_chat_path"
+    ],
+    "36": [
+      "scripts_test_clipboard",
+      "scripts_test_clipboard_chromium",
+      "scripts_test_clipboard_fs",
+      "scripts_test_clipboard_path",
+      "scripts_test_clipboard_testtyping"
+    ],
+    "37": [
+      "browser_browserrecovery",
+      "browser_browserrecovery_browserrecovery",
+      "browser_browserrecovery_browserrecovery_constructor",
+      "browser_browserrecovery_browserrecovery_recover"
+    ],
+    "38": [
+      "claude_claude",
+      "claude_free_plan",
+      "claude_max_plan",
+      "claude_pro_plan"
+    ],
+    "39": [
+      "failure1780488085427_claude_free_plan",
+      "failure1780488085427_claude_landing_page",
+      "failure1780488085427_claude_max_plan",
+      "failure1780488085427_claude_pro_plan"
+    ],
+    "40": [
+      "scripts_debug_claude",
+      "scripts_debug_claude_chromium",
+      "scripts_debug_claude_debugclaude",
+      "scripts_debug_claude_path"
+    ],
+    "41": [
+      "scripts_inspect_full",
+      "scripts_inspect_full_chromium",
+      "scripts_inspect_full_main",
+      "scripts_inspect_full_path"
+    ],
+    "42": [
+      "scripts_inspect_parent",
+      "scripts_inspect_parent_chromium",
+      "scripts_inspect_parent_main",
+      "scripts_inspect_parent_path"
+    ],
+    "43": [
+      "scripts_test_input_selectors",
+      "scripts_test_input_selectors_chromium",
+      "scripts_test_input_selectors_path",
+      "scripts_test_input_selectors_snapshot"
+    ],
+    "44": [
+      "scripts_test_selectors",
+      "scripts_test_selectors_chromium",
+      "scripts_test_selectors_path",
+      "scripts_test_selectors_snapshot"
+    ],
+    "45": [
+      "scripts_test_selectors_headless",
+      "scripts_test_selectors_headless_chromium",
+      "scripts_test_selectors_headless_path",
+      "scripts_test_selectors_headless_snapshot"
+    ],
+    "46": [
+      "scripts_test_whitespace",
+      "scripts_test_whitespace_actualtext",
+      "scripts_test_whitespace_expectedprefix",
+      "scripts_test_whitespace_normalizewhitespace"
+    ],
+    "47": [
+      "session_claudehealthcheck",
+      "session_claudehealthcheck_claudehealthcheck",
+      "session_claudehealthcheck_claudehealthcheck_constructor",
+      "session_claudehealthcheck_claudehealthcheck_execute"
+    ],
+    "48": [
+      "session_sessiondetector",
+      "session_sessiondetector_sessiondetector",
+      "session_sessiondetector_sessiondetector_constructor",
+      "session_sessiondetector_sessiondetector_detect"
+    ],
+    "49": [
+      "e2e_workflow_spec",
+      "e2e_workflow_spec_path",
+      "e2e_workflow_spec_test_expect"
+    ],
+    "50": [
+      "latest_chat_eeat",
+      "latest_chat_seo_audit",
+      "latest_chat_ymyl"
+    ],
+    "51": [
+      "routes_health",
+      "routes_health_createhealthrouter",
+      "routes_health_express"
+    ],
+    "52": [
+      "routes_rewrite",
+      "routes_rewrite_createrewriterouter",
+      "routes_rewrite_express"
+    ],
+    "53": [
+      "routes_status",
+      "routes_status_createstatusrouter",
+      "routes_status_express"
+    ],
+    "54": [
+      "backup",
+      "users_abhinaykalkhanday_desktop_n8n_backup_sh__entry"
+    ],
+    "55": [
+      "claude_interface",
+      "sonnet_4_6_medium"
+    ],
+    "56": [
+      "docsexecutionlifecycle_project_execution_lifecycle",
+      "readme_persistent_job_system"
+    ],
+    "57": [
+      "failure_junior_engineer",
+      "failure_senior_engineer"
+    ],
+    "58": [
+      "healthcheck",
+      "users_abhinaykalkhanday_desktop_n8n_healthcheck_sh__entry"
+    ],
+    "59": [
+      "install",
+      "users_abhinaykalkhanday_desktop_n8n_install_sh__entry"
+    ],
+    "60": [
+      "restart",
+      "users_abhinaykalkhanday_desktop_n8n_restart_sh__entry"
+    ],
+    "61": [
+      "restore",
+      "users_abhinaykalkhanday_desktop_n8n_restore_sh__entry"
+    ],
+    "62": [
+      "scripts_legacy_server",
+      "scripts_legacy_server_startserver"
+    ],
+    "63": [
+      "start",
+      "users_abhinaykalkhanday_desktop_n8n_start_sh__entry"
+    ],
+    "64": [
+      "stop",
+      "users_abhinaykalkhanday_desktop_n8n_stop_sh__entry"
+    ],
+    "65": [
+      "tmp_script",
+      "tmp_script_showinfo"
+    ],
+    "66": [
+      "update",
+      "users_abhinaykalkhanday_desktop_n8n_update_sh__entry"
+    ],
+    "67": [
+      "clauderesponse_claude_seo_response"
+    ],
+    "68": [
+      "e2e_example_spec"
+    ],
+    "69": [
+      "ecosystem_config"
+    ],
+    "70": [
+      "failure_handling_ambiguity"
+    ],
+    "71": [
+      "failure_impact_vs_output"
+    ],
+    "72": [
+      "failure_scope_of_thinking"
+    ],
+    "73": [
+      "image_claude_ui_change"
+    ],
+    "74": [
+      "playwright_workflow"
+    ],
+    "75": [
+      "promptsinput_seo_audit_prompt"
+    ],
+    "76": [
+      "snapshot_assistant_image"
+    ]
+  },
+  "cohesion": {
+    "0": 0.05137844611528822,
+    "1": 0.05176470588235294,
+    "2": 0.05656565656565657,
+    "3": 0.06116642958748222,
+    "4": 0.14112903225806453,
+    "5": 0.06666666666666667,
+    "6": 0.14285714285714285,
+    "7": 0.09090909090909091,
+    "8": 0.14285714285714285,
+    "9": 0.1368421052631579,
+    "10": 0.11764705882352941,
+    "11": 0.15441176470588236,
+    "12": 0.16666666666666666,
+    "13": 0.2571428571428571,
+    "14": 0.14285714285714285,
+    "15": 0.15384615384615385,
+    "16": 0.16666666666666666,
+    "17": 0.18181818181818182,
+    "18": 0.3090909090909091,
+    "19": 0.2727272727272727,
+    "20": 0.2,
+    "21": 0.3111111111111111,
+    "22": 0.2222222222222222,
+    "23": 0.2777777777777778,
+    "24": 0.4642857142857143,
+    "25": 0.3333333333333333,
+    "26": 0.3333333333333333,
+    "27": 0.4,
+    "28": 0.3333333333333333,
+    "29": 0.3333333333333333,
+    "30": 0.3333333333333333,
+    "31": 0.4666666666666667,
+    "32": 0.4,
+    "33": 0.6,
+    "34": 0.4,
+    "35": 0.4,
+    "36": 0.4,
+    "37": 0.5,
+    "38": 0.5,
+    "39": 0.5,
+    "40": 0.5,
+    "41": 0.5,
+    "42": 0.5,
+    "43": 0.5,
+    "44": 0.5,
+    "45": 0.5,
+    "46": 0.5,
+    "47": 0.5,
+    "48": 0.5,
+    "49": 0.6666666666666666,
+    "50": 0.6666666666666666,
+    "51": 0.6666666666666666,
+    "52": 0.6666666666666666,
+    "53": 0.6666666666666666,
+    "54": 1.0,
+    "55": 1.0,
+    "56": 1.0,
+    "57": 1.0,
+    "58": 1.0,
+    "59": 1.0,
+    "60": 1.0,
+    "61": 1.0,
+    "62": 1.0,
+    "63": 1.0,
+    "64": 1.0,
+    "65": 1.0,
+    "66": 1.0,
+    "67": 1.0,
+    "68": 1.0,
+    "69": 1.0,
+    "70": 1.0,
+    "71": 1.0,
+    "72": 1.0,
+    "73": 1.0,
+    "74": 1.0,
+    "75": 1.0,
+    "76": 1.0
+  },
+  "gods": [
+    {
+      "id": "services_claudemanager_claudemanager",
+      "label": "ClaudeManager",
+      "degree": 32
+    },
+    {
+      "id": "repositories_jobrepository_jobrepository",
+      "label": "JobRepository",
+      "degree": 20
+    },
+    {
+      "id": "repositories_projectrepository_projectrepository",
+      "label": "ProjectRepository",
+      "degree": 18
+    },
+    {
+      "id": "services_browsermanager_browsermanager",
+      "label": "BrowserManager",
+      "degree": 17
+    },
+    {
+      "id": "src_server_createapp",
+      "label": "createApp()",
+      "degree": 16
+    },
+    {
+      "id": "services_claudeworker_claudeworker",
+      "label": "ClaudeWorker",
+      "degree": 16
+    },
+    {
+      "id": "repositories_wordpressrepository_wordpressrepository",
+      "label": "WordPressRepository",
+      "degree": 14
+    },
+    {
+      "id": "repositories_siterepository_siterepository",
+      "label": "SiteRepository",
+      "degree": 13
+    },
+    {
+      "id": "services_jobservice_jobservice",
+      "label": "JobService",
+      "degree": 13
+    },
+    {
+      "id": "services_projectservice_projectservice",
+      "label": "ProjectService",
+      "degree": 13
+    }
+  ],
+  "surprises": [
+    {
+      "source": "getSingletonWorker()",
+      "target": "loadConfig()",
+      "source_files": [
+        "scripts/claude.js",
+        "src/config/config.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "getSingletonWorker()",
+      "target": "createLogger()",
+      "source_files": [
+        "scripts/claude.js",
+        "src/utils/logger.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories"
+    },
+    {
+      "source": "Deployment Commands",
+      "target": "Claude Worker Foundation",
+      "source_files": [
+        "DEPLOYMENT_COMMANDS.md",
+        "README.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories"
+    },
+    {
+      "source": "Staging Deployment Design",
+      "target": "Claude Worker Foundation",
+      "source_files": [
+        "DEPLOYMENT_STAGING.md",
+        "README.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories"
+    },
+    {
+      "source": "Production Launch Checklist",
+      "target": "Claude Worker Foundation",
+      "source_files": [
+        "PRODUCTION_LAUNCH_CHECKLIST.md",
+        "README.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories"
+    }
+  ],
+  "tokens": {
+    "input": 1236,
+    "output": 1246
+  }
+}

@@ -1,3 +1,0 @@
-2026/01/21-20:37:07.739 69279a Creating DB /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_www.edubridgeindia.com_0.indexeddb.leveldb since it was missing.
-2026/01/21-20:37:07.741 69279a Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_www.edubridgeindia.com_0.indexeddb.leveldb/MANIFEST-000001
-2026/01/21-20:37:07.783 6927a6 Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)

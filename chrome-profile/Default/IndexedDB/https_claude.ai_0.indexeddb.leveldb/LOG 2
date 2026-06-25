@@ -1,0 +1,7 @@
+2026/06/10-18:35:58.286 1790138 Reusing MANIFEST /Users/abhinaykalkhanday/Desktop/n8n/chrome-profile/Default/IndexedDB/https_claude.ai_0.indexeddb.leveldb/MANIFEST-000001
+2026/06/10-18:35:58.286 1790138 Recovering log #3
+2026/06/10-18:35:58.287 1790138 Reusing old log /Users/abhinaykalkhanday/Desktop/n8n/chrome-profile/Default/IndexedDB/https_claude.ai_0.indexeddb.leveldb/000003.log 
+2026/06/10-22:00:11.530 179013a Level-0 table #5: started
+2026/06/10-22:00:11.538 179013a Level-0 table #5: 4417 bytes OK
+2026/06/10-22:00:11.543 179013a Delete type=0 #3
+2026/06/10-22:00:11.544 179013a Manual compaction at level-0 from (begin) .. (end); will stop at (end)

@@ -1,6 +1,0 @@
-2026/02/18-12:10:59.663 d0ba0d Creating DB /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_forms.office.com_0.indexeddb.leveldb since it was missing.
-2026/02/18-12:10:59.676 d0ba0d Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_forms.office.com_0.indexeddb.leveldb/MANIFEST-000001
-2026/02/18-12:11:39.918 d0ba0d Level-0 table #5: started
-2026/02/18-12:11:39.920 d0ba0d Level-0 table #5: 2088 bytes OK
-2026/02/18-12:11:39.922 d0ba0d Delete type=0 #3
-2026/02/18-12:11:39.923 d0ba0d Manual compaction at level-0 from (begin) .. (end); will stop at (end)

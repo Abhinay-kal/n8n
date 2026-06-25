@@ -1,6 +1,0 @@
-2026/04/22-18:05:03.181 1eb8cd0 Creating DB /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_www.udemy.com_0.indexeddb.leveldb since it was missing.
-2026/04/22-18:05:03.183 1eb8cd0 Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_www.udemy.com_0.indexeddb.leveldb/MANIFEST-000001
-2026/04/22-18:06:26.304 1eb8cce Level-0 table #5: started
-2026/04/22-18:06:26.306 1eb8cce Level-0 table #5: 8277 bytes OK
-2026/04/22-18:06:26.310 1eb8cce Delete type=0 #3
-2026/04/22-18:06:26.311 1eb8cce Manual compaction at level-0 from (begin) .. (end); will stop at (end)

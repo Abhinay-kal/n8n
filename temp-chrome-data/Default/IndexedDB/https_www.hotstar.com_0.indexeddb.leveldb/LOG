@@ -1,7 +1,0 @@
-2026/03/20-20:17:11.903 4cb491 Creating DB /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_www.hotstar.com_0.indexeddb.leveldb since it was missing.
-2026/03/20-20:17:11.905 4cb491 Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_www.hotstar.com_0.indexeddb.leveldb/MANIFEST-000001
-2026/03/20-20:17:11.910 4cb49e Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)
-2026/03/20-20:26:28.019 4cb494 Level-0 table #5: started
-2026/03/20-20:26:28.024 4cb494 Level-0 table #5: 27713 bytes OK
-2026/03/20-20:26:28.026 4cb494 Delete type=0 #3
-2026/03/20-20:26:28.027 4cb494 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
