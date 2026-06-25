@@ -1,6 +1,0 @@
-2026/05/25-21:48:19.759 132691 Creating DB /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_customer.grayquest.com_0.indexeddb.leveldb since it was missing.
-2026/05/25-21:48:19.761 132691 Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_customer.grayquest.com_0.indexeddb.leveldb/MANIFEST-000001
-2026/05/25-21:48:51.813 132691 Level-0 table #5: started
-2026/05/25-21:48:51.814 132691 Level-0 table #5: 1278 bytes OK
-2026/05/25-21:48:51.818 132691 Delete type=0 #3
-2026/05/25-21:48:51.818 132691 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

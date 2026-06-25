@@ -1,6 +1,0 @@
-2026/01/25-15:56:23.125 c3dbc6 Creating DB /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_bmobile.in_0.indexeddb.leveldb since it was missing.
-2026/01/25-15:56:23.127 c3dbc6 Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_bmobile.in_0.indexeddb.leveldb/MANIFEST-000001
-2026/01/25-16:07:17.910 c3dbd1 Level-0 table #5: started
-2026/01/25-16:07:17.912 c3dbd1 Level-0 table #5: 1360 bytes OK
-2026/01/25-16:07:17.913 c3dbd1 Delete type=0 #3
-2026/01/25-16:07:17.913 c3dbd1 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

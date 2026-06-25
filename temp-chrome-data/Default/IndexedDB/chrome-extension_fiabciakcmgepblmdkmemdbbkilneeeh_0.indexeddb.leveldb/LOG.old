@@ -1,5 +1,0 @@
-2026/05/22-09:55:41.727 325075a Creating DB /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/chrome-extension_fiabciakcmgepblmdkmemdbbkilneeeh_0.indexeddb.leveldb since it was missing.
-2026/05/22-09:55:41.735 325075a Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/chrome-extension_fiabciakcmgepblmdkmemdbbkilneeeh_0.indexeddb.leveldb/MANIFEST-000001
-2026/05/22-14:44:56.038 325074a Level-0 table #5: started
-2026/05/22-14:44:56.063 325074a Level-0 table #5: 2909392 bytes OK
-2026/05/22-14:44:56.065 325074a Delete type=0 #3

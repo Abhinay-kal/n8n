@@ -1,7 +1,0 @@
-2026/04/11-19:43:22.884 12f210e Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_calendar.google.com_0.indexeddb.leveldb/MANIFEST-000001
-2026/04/11-19:43:22.885 12f210e Recovering log #3
-2026/04/11-19:43:22.885 12f210e Reusing old log /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_calendar.google.com_0.indexeddb.leveldb/000003.log 
-2026/04/11-19:43:29.701 12f210e Level-0 table #5: started
-2026/04/11-19:43:29.703 12f210e Level-0 table #5: 1538 bytes OK
-2026/04/11-19:43:29.706 12f210e Delete type=0 #3
-2026/04/11-19:43:29.706 12f210e Manual compaction at level-0 from (begin) .. (end); will stop at (end)

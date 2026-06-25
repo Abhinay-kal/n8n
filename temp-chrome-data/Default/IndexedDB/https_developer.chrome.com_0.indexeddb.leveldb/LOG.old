@@ -1,7 +1,0 @@
-2026/03/25-17:54:15.526 a4ea72 Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_developer.chrome.com_0.indexeddb.leveldb/MANIFEST-000001
-2026/03/25-17:54:15.527 a4ea72 Recovering log #3
-2026/03/25-17:54:15.527 a4ea72 Reusing old log /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_developer.chrome.com_0.indexeddb.leveldb/000003.log 
-2026/03/25-17:54:54.111 a4ea72 Level-0 table #5: started
-2026/03/25-17:54:54.114 a4ea72 Level-0 table #5: 6051 bytes OK
-2026/03/25-17:54:54.120 a4ea72 Delete type=0 #3
-2026/03/25-17:54:54.122 a4ea72 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

@@ -1,15 +1,3 @@
-2026/05/20-17:34:45.214 325074a Reusing MANIFEST /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_claude.ai_0.indexeddb.leveldb/MANIFEST-000001
-2026/05/20-17:34:45.214 325074a Recovering log #7
-2026/05/20-17:34:45.214 325074a Reusing old log /Users/abhinaykalkhanday/Library/Application Support/Google/Chrome/Default/IndexedDB/https_claude.ai_0.indexeddb.leveldb/000007.log 
-2026/05/22-09:57:22.005 325075c Level-0 table #12: started
-2026/05/22-09:57:22.031 325075c Level-0 table #12: 3090 bytes OK
-2026/05/22-09:57:22.205 325075c Delete type=0 #7
-2026/05/22-09:57:22.220 325074a Manual compaction at level-0 from (begin) .. (end); will stop at (end)
-2026/05/22-09:57:22.222 325074a Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x01\x01\x02\x01\x11\x00r\x00e\x00a\x00c\x00t\x00-\x00q\x00u\x00e\x00r\x00y\x00-\x00c\x00a\x00c\x00h\x00e' @ 103 : 1
-2026/05/22-09:57:22.222 325074a Compacting 1@1 + 1@2 files
-2026/05/22-09:57:22.278 325074a Generated table #13@1: 21 keys, 681 bytes
-2026/05/22-09:57:22.288 325074a Compacted 1@1 + 1@2 files => 681 bytes
-2026/05/22-09:57:22.325 325074a compacted to: files[ 0 0 1 0 0 0 0 ]
-2026/05/22-09:57:22.491 325074a Delete type=2 #12
-2026/05/22-09:57:22.536 325074a Delete type=2 #9
-2026/05/22-09:57:22.551 325075e Manual compaction at level-1 from '\x00\x01\x01\x02\x01\x11\x00r\x00e\x00a\x00c\x00t\x00-\x00q\x00u\x00e\x00r\x00y\x00-\x00c\x00a\x00c\x00h\x00e' @ 103 : 1 .. (end); will stop at (end)
+2026/06/25-16:55:37.096 2ce644d Reusing MANIFEST /Users/abhinaykalkhanday/Desktop/n8n/temp-chrome-data/Default/IndexedDB/https_claude.ai_0.indexeddb.leveldb/MANIFEST-000001
+2026/06/25-16:55:37.098 2ce644d Recovering log #4
+2026/06/25-16:55:37.104 2ce644d Reusing old log /Users/abhinaykalkhanday/Desktop/n8n/temp-chrome-data/Default/IndexedDB/https_claude.ai_0.indexeddb.leveldb/000004.log 
